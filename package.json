@@ -15,7 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build && rm -rf docs && mv build docs && touch docs/.nojekyll",
-    "deploy":   "git add docs .nojekyll && git commit -m \"chore: deploy React build to docs/\" && git push origin main",
+    "deploy":   "git add docs && git add docs/.nojekyll && git commit -m \"chore: deploy React build to docs/\" && git push origin main",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
