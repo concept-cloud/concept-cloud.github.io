@@ -1,0 +1,322 @@
+<!-- =========================================================
+     MyConcept.Cloud — Shared Styles + Header/Footer Template
+     Pages included below:
+     1) /features.html
+     2) /waitlist.html
+     3) /privacy.html
+     Drop-in ready. Matches your current design tokens.
+========================================================= -->
+
+<!-- =========================
+     1) FEATURES PAGE
+     Save as: features.html
+========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyConcept.Cloud — Features</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    :root {
+      --primary:#4361ee; --secondary:#3a0ca3; --accent:#f72585;
+      --light:#f8f9fa; --dark:#212529; --success:#4cc9f0; --gray:#6c757d;
+    }
+    body { background-color:#f5f7ff; color:var(--dark); line-height:1.6; }
+    .container { width:90%; max-width:1200px; margin:0 auto; padding:0 15px; }
+
+    /* Buttons */
+    .btn{
+      display:inline-block; padding:12px 28px; background:var(--primary); color:#fff;
+      border:none; border-radius:50px; font-weight:600; text-decoration:none; cursor:pointer;
+      transition:all .3s ease; font-size:1rem; box-shadow:0 4px 6px rgba(0,0,0,.1);
+    }
+    .btn:hover{ background:var(--secondary); transform:translateY(-3px); box-shadow:0 6px 12px rgba(0,0,0,.15); }
+    .btn-accent{ background:var(--accent); }
+    .btn-accent:hover{ background:#d1186a; }
+
+    section { padding:80px 0; }
+    .section-title { text-align:center; margin-bottom:60px; }
+    .section-title h2 { font-size:2.5rem; color:var(--secondary); margin-bottom:15px; }
+    .section-title p { color:var(--gray); font-size:1.1rem; max-width:800px; margin:0 auto; }
+
+    /* Header */
+    header{ background:#fff; box-shadow:0 2px 10px rgba(0,0,0,.1); position:fixed; width:100%; top:0; z-index:1000; }
+    .navbar{ display:flex; justify-content:space-between; align-items:center; padding:20px 0; }
+    .logo{ font-size:1.8rem; font-weight:700; color:var(--primary); text-decoration:none; display:flex; align-items:center; }
+    .logo i{ margin-right:10px; color:var(--primary); }
+    .nav-links{ display:flex; list-style:none; }
+    .nav-links li{ margin:0 15px; }
+    .nav-links a{ text-decoration:none; color:var(--dark); font-weight:500; transition:color .3s ease; }
+    .nav-links a:hover{ color:var(--primary); }
+    .mobile-menu{ display:none; cursor:pointer; }
+
+    /* Hero */
+    .hero{
+      padding:160px 0 80px;
+      background:linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+      color:#fff; text-align:center;
+    }
+    .hero h1{ font-size:3rem; margin-bottom:15px; line-height:1.2; }
+    .hero p{ font-size:1.15rem; max-width:850px; margin:0 auto 25px; opacity:.95; }
+    .hero-actions{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+    .hero-actions .btn{ background:#fff; color:var(--primary); }
+    .hero-actions .btn:hover{ background:var(--light); }
+
+    /* Cards / grids */
+    .grid-3{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px; }
+    .card{
+      background:#fff; border-radius:10px; padding:30px;
+      box-shadow:0 5px 15px rgba(0,0,0,.05);
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
+    .card:hover{ transform:translateY(-8px); box-shadow:0 15px 30px rgba(0,0,0,.1); }
+    .icon-bubble{
+      width:76px; height:76px; border-radius:50%;
+      background:rgba(67,97,238,.1);
+      display:flex; align-items:center; justify-content:center;
+      color:var(--primary); font-size:1.9rem;
+      margin:0 0 18px 0;
+    }
+    .card h3{ color:var(--secondary); margin-bottom:10px; }
+    .card p{ color:var(--gray); }
+
+    /* Feature rows */
+    .feature-rows{ display:grid; gap:16px; max-width:1000px; margin:0 auto; }
+    .row{
+      display:flex; gap:16px; align-items:flex-start;
+      background:#fff; border-radius:10px; padding:22px;
+      box-shadow:0 5px 15px rgba(0,0,0,.05);
+    }
+    .row .mini-icon{
+      width:46px; height:46px; border-radius:12px;
+      background:rgba(247,37,133,.12);
+      display:flex; align-items:center; justify-content:center;
+      color:var(--accent); flex:0 0 46px;
+    }
+    .row h4{ color:var(--secondary); margin-bottom:6px; }
+    .row p{ color:var(--gray); margin:0; }
+
+    /* CTA */
+    .cta{
+      background:linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+      color:#fff; text-align:center; padding:80px 0;
+    }
+    .cta h2{ font-size:2.3rem; margin-bottom:14px; }
+    .cta p{ max-width:800px; margin:0 auto 24px; opacity:.95; }
+
+    /* Footer */
+    footer{ background:var(--dark); color:#fff; padding:60px 0 30px; }
+    .footer-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:30px; margin-bottom:40px; }
+    .footer-col h3{ margin-bottom:20px; position:relative; padding-bottom:10px; }
+    .footer-col h3::after{ content:''; position:absolute; left:0; bottom:0; width:50px; height:2px; background:var(--accent); }
+    .footer-col ul{ list-style:none; }
+    .footer-col ul li{ margin-bottom:10px; }
+    .footer-col ul li a{ color:#ddd; text-decoration:none; transition:color .3s ease; }
+    .footer-col ul li a:hover{ color:var(--accent); }
+    .social-links{ display:flex; gap:15px; margin-top:20px; }
+    .social-links a{
+      display:flex; align-items:center; justify-content:center;
+      width:40px; height:40px; background:rgba(255,255,255,.1);
+      border-radius:50%; color:#fff; transition:all .3s ease;
+    }
+    .social-links a:hover{ background:var(--accent); transform:translateY(-3px); }
+    .copyright{ text-align:center; padding-top:30px; border-top:1px solid rgba(255,255,255,.1); color:#aaa; font-size:.9rem; }
+
+    /* Responsive */
+    @media (max-width:992px){ .hero h1{ font-size:2.6rem; } }
+    @media (max-width:768px){
+      .nav-links{ display:none; }
+      .mobile-menu{ display:block; }
+      .hero h1{ font-size:2.1rem; }
+      section{ padding:60px 0; }
+      .row{ flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo"><i class="fas fa-cloud"></i> MyConcept.Cloud</a>
+        <ul class="nav-links">
+          <li><a href="features.html">Features</a></li>
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="waitlist.html">Waitlist</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Features Built for Writers Who Actually Write</h1>
+      <p>
+        MyConcept.Cloud is your idea vault + story builder: capture concepts fast, expand them into scenes,
+        organize characters, and search your entire creative brain in seconds.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="waitlist.html">Join the Waitlist</a>
+        <a class="btn" href="#feature-breakdown">See Feature Breakdown</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="feature-breakdown">
+    <div class="container">
+      <div class="section-title">
+        <h2>Core Tools</h2>
+        <p>Everything here is designed to keep your ideas from dying in your Notes app.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon-bubble"><i class="fas fa-inbox"></i></div>
+          <h3>Concept Inbox</h3>
+          <p>Capture ideas instantly—title, a quick blurb, and optional tags. Organize now or later. Nothing gets lost.</p>
+        </div>
+        <div class="card">
+          <div class="icon-bubble"><i class="fas fa-film"></i></div>
+          <h3>Scene Builder</h3>
+          <p>Turn “what if…” into an actual scene: genre, setting, shot notes, characters, and a scene goal.</p>
+        </div>
+        <div class="card">
+          <div class="icon-bubble"><i class="fas fa-user"></i></div>
+          <h3>Character Profiles</h3>
+          <p>Track who your characters are, what they want, relationships, and evolution—without a 40-tab spreadsheet.</p>
+        </div>
+      </div>
+
+      <div style="height:40px;"></div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon-bubble"><i class="fas fa-project-diagram"></i></div>
+          <h3>Story Structure</h3>
+          <p>Expand scenes into a full outline: 3-act structure, beats, arc notes, and story goals you can actually follow.</p>
+        </div>
+        <div class="card">
+          <div class="icon-bubble"><i class="fas fa-tags"></i></div>
+          <h3>Tags & Filtering</h3>
+          <p>Tag by genre, tone, location, theme, or project. Build a library you can search like Google.</p>
+        </div>
+        <div class="card">
+          <div class="icon-bubble"><i class="fas fa-magnifying-glass"></i></div>
+          <h3>Fast Search</h3>
+          <p>Find “that one idea about the diner in the rain” instantly. Search across concepts, scenes, and characters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>What You Can Do, In Plain English</h2>
+        <p>Less “feature list,” more “how it helps you finish your script.”</p>
+      </div>
+
+      <div class="feature-rows">
+        <div class="row">
+          <div class="mini-icon"><i class="fas fa-bolt"></i></div>
+          <div>
+            <h4>Capture ideas in 10 seconds</h4>
+            <p>Log your concept before traffic, emails, or life steals it. Organize when you’re ready.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mini-icon"><i class="fas fa-layer-group"></i></div>
+          <div>
+            <h4>Grow a concept into scenes</h4>
+            <p>Add setting, shot notes, tone, and character involvement so your idea becomes usable on writing day.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mini-icon"><i class="fas fa-sitemap"></i></div>
+          <div>
+            <h4>Turn scenes into an outline</h4>
+            <p>Connect scenes into beats and a structure that feels like a real project—because it is.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mini-icon"><i class="fas fa-shield-halved"></i></div>
+          <div>
+            <h4>Keep your ideas safe</h4>
+            <p>You own your content. You can export it. Your work isn’t “training data” for someone else’s product.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Want Early Access?</h2>
+      <p>Join the waitlist and be first in line when MyConcept.Cloud opens beta access.</p>
+      <a class="btn btn-accent" href="waitlist.html">Join Waitlist</a>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>MyConcept</h3>
+          <p>Empowering screenwriters with powerful tools to bring their stories to life.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="waitlist.html">Waitlist</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="index.html#how-it-works">How It Works</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="contact.html">Contact (optional)</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2026 MyConcept. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    mobileMenu.addEventListener('click', () => {
+      navLinks.style.display = (navLinks.style.display === 'flex') ? 'none' : 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.background = 'white';
+      navLinks.style.position = 'absolute';
+      navLinks.style.right = '15px';
+      navLinks.style.top = '70px';
+      navLinks.style.padding = '15px';
+      navLinks.style.borderRadius = '12px';
+      navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.12)';
+      navLinks.style.zIndex = '9999';
+    });
+  </script>
+</body>
+</html>
+
+
