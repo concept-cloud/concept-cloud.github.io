@@ -102,6 +102,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
+            position: relative;
         }
 
         .logo {
@@ -121,6 +122,7 @@
         .nav-links {
             display: flex;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links li {
@@ -141,6 +143,7 @@
         .mobile-menu {
             display: none;
             cursor: pointer;
+            font-size: 1.4rem;
         }
 
         /* Hero Section */
@@ -169,6 +172,7 @@
             justify-content: center;
             gap: 20px;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .hero-btns .btn {
@@ -240,44 +244,6 @@
             font-size: 1.2rem;
             margin-bottom: 20px;
         }
-
-        /* Testimonials */
-        .testimonials {
-            background: #f0f4ff;
-        }
-
-        .testimonial-card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin: 20px;
-        }
-
-        .author {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .author img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 15px;
-            object-fit: cover;
-        }
-
-        .author-info h4 {
-            margin-bottom: 5px;
-            color: var(--secondary);
-        }
-
-        .author-info p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
 
         /* CTA Section */
         .cta {
@@ -380,42 +346,41 @@
 
         /* Responsive Design */
         @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
+            .hero h1 { font-size: 2.8rem; }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-btns {
+            .nav-links { display: none; }
+
+            .mobile-menu { display: block; }
+
+            /* dropdown nav panel when open */
+            .nav-links.open {
+                display: flex;
                 flex-direction: column;
-                align-items: center;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: white;
+                padding: 14px;
+                border-radius: 12px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+                width: 220px;
+                z-index: 2000;
             }
-            
-            section {
-                padding: 60px 0;
-            }
+
+            .nav-links.open li { margin: 10px 0; }
+
+            .hero h1 { font-size: 2.2rem; }
+
+            .hero-btns { flex-direction: column; align-items: center; }
+
+            section { padding: 60px 0; }
         }
 
         @media (max-width: 576px) {
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .hero {
-                padding: 140px 0 60px;
-            }
+            .section-title h2 { font-size: 2rem; }
+            .hero { padding: 140px 0 60px; }
         }
     </style>
 </head>
@@ -424,15 +389,18 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo"><i class="fas fa-cloud"></i> MyConcept.Cloud</a>
-               <ul class="nav-links">
-  <li><a href="features.html">Features</a></li>
-  <li><a href="index.html#how-it-works">How It Works</a></li>
-  <li><a href="waitlist.html">Waitlist</a></li>
-  <li><a href="privacy.html">Privacy</a></li>
-  <li><a href="index.html#contact">Contact</a></li>
-</ul>
-                <div class="mobile-menu">
+                <!-- FIX: logo should go home -->
+                <a href="index.html" class="logo"><i class="fas fa-cloud"></i> MyConcept.Cloud</a>
+
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="waitlist.html">Waitlist</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+
+                <div class="mobile-menu" id="mobileMenu">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
@@ -444,8 +412,11 @@
         <div class="container">
             <h1>Transform Your Screenwriting Workflow</h1>
             <p>MyConcept Cloud is the all-in-one platform that helps screenwriters organize, expand, and build your ideas into stories with powerful tools designed specifically for your craft.</p>
+
+            <!-- FIX: hero button should go to other pages, not just #features -->
             <div class="hero-btns">
-                <a href="#features" class="btn btn-accent">Learn More</a>
+                <a href="features.html" class="btn btn-accent">See Features</a>
+                <a href="waitlist.html" class="btn">Join Waitlist</a>
             </div>
         </div>
     </section>
@@ -484,7 +455,7 @@
     </section>
 
     <!-- How It Works -->
-<section id="how-it-works" class="how-it-works">
+    <section id="how-it-works" class="how-it-works">
         <div class="container">
             <div class="section-title">
                 <h2>How It Works</h2>
@@ -514,11 +485,13 @@
             </div>
         </div>
     </section>
+
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
             <h2>Ready to Transform Your Screenwriting?</h2>
-            <p>Join thousands of writers who have already elevated their craft with MyConcept Cloud. Start your free trial today.</p>
+            <p>Join writers building a real idea system with MyConcept Cloud. Get early access on the waitlist.</p>
+            <a href="waitlist.html" class="btn btn-accent">Join Waitlist</a>
         </div>
     </section>
 
@@ -537,55 +510,52 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h3>Features</h3>
+                    <h3>Pages</h3>
                     <ul>
-                        <li><a href="#">Storyboard Planning</a></li>
-                        <li><a href="#">Collaborative Writing</a></li>
-                        <li><a href="#">Script Formatting</a></li>
-                        <li><a href="#">Cloud Storage</a></li>
-                        <li><a href="#">Character Management</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="waitlist.html">Waitlist</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Support</h3>
                     <ul>
-                        <li><a href="#">Community</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="waitlist.html">Waitlist</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 MyConcept. All rights reserved.</p>
+                <p>&copy; 2026 MyConcept. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Simple smooth scrolling for navigation links
+        // Smooth scroll ONLY for same-page anchors like "#features"
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (!target) return; // if it doesn't exist, do nothing
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                target.scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
+        // Mobile menu toggle (safe + doesn't break page links)
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
 
         mobileMenu.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.classList.toggle('open');
+        });
+
+        // Close mobile nav after clicking any link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
         });
     </script>
 </body>
