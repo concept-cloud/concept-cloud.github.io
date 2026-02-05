@@ -211,6 +211,7 @@ header{
 }
 
 .btn-accent:hover{
+  color: #FFFFFF;
   transform: translateY(-1px);
   box-shadow:
     0 0 0 1px rgba(0,0,0,0.30) inset,
