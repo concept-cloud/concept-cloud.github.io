@@ -295,3 +295,93 @@ footer{
   .hero h1{ font-size:2.25rem; }
   section{ padding:55px 0; }
 }
+
+
+/* ===============================
+   Infinite App Marquee
+================================ */
+
+.apps-scroll-section{
+  padding: 70px 0 90px;
+  overflow: hidden;
+}
+
+.apps-marquee{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.apps-track{
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  animation: scrollApps 40s linear infinite;
+}
+
+.apps-marquee:hover .apps-track{
+  animation-play-state: paused;
+}
+
+/* App tile */
+.app-tile{
+  min-width: 220px;
+  height: 180px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.02)
+  );
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-decoration: none;
+  color: #E7E9EE;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.app-tile:hover{
+  transform: translateY(-6px) scale(1.03);
+  box-shadow:
+    0 0 0 1px rgba(31,180,106,0.25),
+    0 18px 52px rgba(0,0,0,0.45);
+}
+
+/* App icon */
+.app-tile img{
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.45));
+}
+
+/* App name */
+.app-tile span{
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  font-size: 1rem;
+}
+
+/* Animation */
+@keyframes scrollApps{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .app-tile{
+    min-width: 180px;
+    height: 160px;
+  }
+}
