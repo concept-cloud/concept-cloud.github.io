@@ -37,6 +37,43 @@ section{ padding:70px 0; }
   .mobile-menu{ display:block; }
   section{ padding:55px 0; }
 }
+/* ===========================
+   Apps Rotator (shared layout)
+   =========================== */
+
+.app-hero{ padding: 40px 0 70px; }
+
+.app-rotator{
+  --i: 0;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  outline: none;
+}
+
+.ar-track{
+  display: flex;
+  transition: transform 700ms ease;
+  transform: translateX(calc(var(--i) * -100%));
+}
+
+.ar-slide{ min-width: 100%; padding: 34px; }
+
+.ar-grid{
+  display: grid;
+  grid-template-columns: 160px 1fr; /* smaller left column */
+  gap: 22px;
+  align-items: center;
+}
+
+.ar-left{ display:flex; justify-content:center; align-items:center; }
+
+.ar-icon{
+  width: 110px;     /* THIS is the “small framed icon” */
+  height: 110px;
+  border-radius: 26px;
+  object-fit: cover;
+}
 
 /* ===========================
    THEME: MyConcept (LIGHT)
@@ -120,6 +157,15 @@ body.theme-myconcept footer{
   padding:46px 0 28px;
   margin-top:60px;
 }
+body.theme-myconcept .app-rotator{
+  background: linear-gradient(135deg, rgba(67,97,238,.10), rgba(58,12,163,.10));
+  box-shadow: 0 18px 40px rgba(0,0,0,.14);
+  border: 1px solid rgba(0,0,0,.08);
+}
+
+body.theme-myconcept .ar-right h1{ color: var(--secondary); margin:0 0 10px; }
+body.theme-myconcept .ar-right p{ color: var(--muted); margin:0 0 18px; }
+body.theme-myconcept .ar-icon{ background:#fff; box-shadow: 0 12px 30px rgba(0,0,0,.18); }
 
 /* ===========================
    THEME: MinuteMark (DARK)
@@ -157,6 +203,22 @@ body.theme-minutemark .nav-links.open{
   background: rgba(18,21,27,0.98);
   border: 1px solid rgba(255,255,255,0.05);
   box-shadow:0 16px 44px rgba(0,0,0,.45);
+}
+body.theme-minutemark .app-rotator{
+  background:
+    radial-gradient(800px 400px at 20% 0%, rgba(31,180,106,0.16), transparent 60%),
+    radial-gradient(700px 350px at 80% 20%, rgba(242,178,51,0.13), transparent 65%),
+    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 18px 52px rgba(0,0,0,.45);
+}
+
+body.theme-minutemark .ar-right h1{ color: var(--text); margin:0 0 10px; }
+body.theme-minutemark .ar-right p{ color: var(--muted); margin:0 0 18px; }
+body.theme-minutemark .ar-icon{
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 14px 40px rgba(0,0,0,.45);
 }
 
 /* put MinuteMark-specific hero/cards/etc here */
