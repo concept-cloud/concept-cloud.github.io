@@ -1,171 +1,150 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MyConcept.Cloud — Waitlist</title>
-  <link rel="stylesheet" href="/assets/site.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join the Waitlist — MyConcept.Cloud</title>
+  <meta name="description" content="Get early access to MyConcept.Cloud — a native app for screenwriters to capture ideas and build them into full plots and outlines." />
+
+  <link rel="stylesheet" href="assets/site.css" />
+  <script defer src="assets/site.js"></script>
 </head>
-<body>
+
+<body class="theme-myconcept">
   <header>
     <div class="container">
       <nav class="navbar">
-        <a href="index.html" class="logo"><i class="fas fa-cloud"></i> MyConcept.Cloud</a>
+        <a href="index.html" class="logo">
+          <i class="fa-solid fa-cloud"></i>
+          MyConcept.Cloud
+        </a>
+
         <ul class="nav-links">
           <li><a href="features.html">Features</a></li>
-          <li><a href="index.html#how-it-works">How It Works</a></li>
           <li><a href="waitlist.html">Waitlist</a></li>
           <li><a href="privacy.html">Privacy</a></li>
         </ul>
-        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+
+        <div class="mobile-menu">☰</div>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Join the MyConcept.Cloud Waitlist</h1>
-      <p>
-        Get early access to beta features, product updates, and the first chance to reserve your username.
-        Your ideas belong to you — always.
-      </p>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="panel">
-        <h2>Early Access Signup</h2>
-        <p>
-          Drop your email and tell us what you write. We’ll reach out as soon as beta access opens.
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Early access</p>
+        <h1>Capture ideas. Build stories.</h1>
+        <p class="hero-lead">
+          MyConcept.Cloud is a native app for screenwriters to quickly capture ideas
+          and develop them into structured plots, scenes, and outlines.
         </p>
-
-        <!-- NOTE:
-          This form is front-end only.
-          To make it functional, wire it to:
-          - Formspree
-          - Netlify Forms
-          - Firebase/Appwrite
-          - Your own API endpoint
-        -->
-        <form id="waitlistForm">
-          <div class="two-col">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Greg Hudler" required />
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@domain.com" required />
-            </div>
-          </div>
-
-          <div class="two-col">
-            <div>
-              <label for="writerType">What do you write?</label>
-              <select id="writerType" name="writerType" required>
-                <option value="" disabled selected>Select one</option>
-                <option>Screenplays</option>
-                <option>TV / Episodic</option>
-                <option>Short films</option>
-                <option>Novels / Fiction</option>
-                <option>Comics / Graphic</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div>
-              <label for="experience">Experience level</label>
-              <select id="experience" name="experience" required>
-                <option value="" disabled selected>Select one</option>
-                <option>New</option>
-                <option>Intermediate</option>
-                <option>Advanced</option>
-                <option>Professional</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label for="note">What would make this platform a “must-have” for you? (optional)</label>
-            <textarea id="note" name="note" rows="4" placeholder="Example: exporting to Final Draft, scene linking, beat board..."></textarea>
-          </div>
-
-          <button class="btn btn-accent" type="submit"><i class="fas fa-paper-plane"></i> Join Waitlist</button>
-
-          <div class="fineprint">
-            By joining, you agree to our <a href="privacy.html">Privacy Policy</a>.
-            We’ll never sell your email.
-          </div>
-        </form>
-
-        <div id="formMessage" style="margin-top:14px; font-weight:600;"></div>
       </div>
+    </section>
 
-      <div class="benefits">
-        <div class="benefit">
-          <i class="fas fa-lock"></i>
-          <div>
-            <strong>Privacy-first</strong>
-            <div style="color:var(--gray);">Your ideas are yours. Export anytime.</div>
-          </div>
+    <section>
+      <div class="container">
+        <div class="panel">
+          <h2>Join the waitlist</h2>
+          <p>
+            Be the first to try MyConcept.Cloud on iPhone, iPad, and Mac.
+            We’ll send you early access and updates as development progresses.
+          </p>
+
+          <form id="waitlistForm">
+            <div class="two-col">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@email.com" required />
+              </div>
+            </div>
+
+            <div class="two-col">
+              <div>
+                <label for="writerType">What do you write?</label>
+                <select id="writerType" name="writerType" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option>Screenplays</option>
+                  <option>TV / Episodic</option>
+                  <option>Short films</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="experience">Experience level</label>
+                <select id="experience" name="experience" required>
+                  <option value="" disabled selected>Select one</option>
+                  <option>New</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                  <option>Professional</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="note">What would make this a must-have? (optional)</label>
+              <textarea id="note" name="note" rows="4" placeholder="Example: scene linking, outlining tools, export options..."></textarea>
+            </div>
+
+            <button class="btn btn-accent" type="submit">
+              Join Waitlist
+            </button>
+
+            <div class="fineprint">
+              By joining, you agree to our <a href="privacy.html">Privacy Policy</a>.
+            </div>
+          </form>
+
+          <div id="formMessage" style="margin-top:14px; font-weight:600;"></div>
         </div>
-        <div class="benefit">
-          <i class="fas fa-wand-magic-sparkles"></i>
-          <div>
-            <strong>Writer-centric UI</strong>
-            <div style="color:var(--gray);">Built for capturing + expanding concepts fast.</div>
-          </div>
-        </div>
-        <div class="benefit">
-          <i class="fas fa-bolt"></i>
-          <div>
-            <strong>Faster story building</strong>
-            <div style="color:var(--gray);">Concept → Scene → Outline without friction.</div>
-          </div>
+
+        <div class="grid" style="margin-top:40px;">
+          <article class="card">
+            <h3>Built for Screenwriters</h3>
+            <p>
+              Focused on story structure — not generic notes or scattered documents.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Capture Anywhere</h3>
+            <p>
+              Save ideas instantly on iPhone and expand them later on iPad or Mac.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>From Idea to Outline</h3>
+            <p>
+              Move from concept → plot → scene → outline in a clean, structured flow.
+            </p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card">
+          <h2>Start building your next story.</h2>
+          <p>
+            Join early and help shape the future of MyConcept.Cloud.
+          </p>
+          <a class="btn btn-accent" href="#waitlistForm">Join Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="container">
-      <div class="copyright">
-        <p>&copy; 2026 MyConcept. All rights reserved.</p>
-      </div>
+      <p>&copy; 2026 MyConcept.Cloud. All rights reserved.</p>
     </div>
   </footer>
-
-  <script>
-    // Mobile menu toggle
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
-    mobileMenu.addEventListener('click', () => {
-      navLinks.style.display = (navLinks.style.display === 'flex') ? 'none' : 'flex';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.background = 'white';
-      navLinks.style.position = 'absolute';
-      navLinks.style.right = '15px';
-      navLinks.style.top = '70px';
-      navLinks.style.padding = '15px';
-      navLinks.style.borderRadius = '12px';
-      navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.12)';
-      navLinks.style.zIndex = '9999';
-    });
-
-    // Front-end only "success" message
-    const form = document.getElementById('waitlistForm');
-    const msg = document.getElementById('formMessage');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      msg.style.color = '#0b8457';
-      msg.textContent = "You're in! (Front-end demo) Hook this form to Formspree/Netlify/Appwrite to capture submissions.";
-      form.reset();
-    });
-  </script>
 </body>
 </html>
-
-

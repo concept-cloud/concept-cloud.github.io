@@ -1,218 +1,136 @@
-<!-- =========================
-     3) PRIVACY POLICY PAGE
-     Save as: privacy.html
-========================= -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MyConcept.Cloud — Privacy Policy</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    :root { --primary:#4361ee; --secondary:#3a0ca3; --accent:#f72585; --light:#f8f9fa; --dark:#212529; --gray:#6c757d; }
-    body { background-color:#f5f7ff; color:var(--dark); line-height:1.7; }
-    .container { width:90%; max-width:1000px; margin:0 auto; padding:0 15px; }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — MyConcept.Cloud</title>
+  <meta name="description" content="Privacy Policy for MyConcept.Cloud, a native app for screenwriters to capture ideas and develop stories." />
 
-    header{ background:#fff; box-shadow:0 2px 10px rgba(0,0,0,.1); position:fixed; width:100%; top:0; z-index:1000; }
-    .navbar{ display:flex; justify-content:space-between; align-items:center; padding:20px 0; }
-    .logo{ font-size:1.8rem; font-weight:700; color:var(--primary); text-decoration:none; display:flex; align-items:center; }
-    .logo i{ margin-right:10px; color:var(--primary); }
-    .nav-links{ display:flex; list-style:none; }
-    .nav-links li{ margin:0 15px; }
-    .nav-links a{ text-decoration:none; color:var(--dark); font-weight:500; transition:color .3s ease; }
-    .nav-links a:hover{ color:var(--primary); }
-    .mobile-menu{ display:none; cursor:pointer; }
-
-    .hero{
-      padding:150px 0 40px;
-      background:linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
-      color:#fff; text-align:center;
-    }
-    .hero h1{ font-size:2.6rem; margin-bottom:10px; }
-    .hero p{ opacity:.95; }
-
-    section{ padding:55px 0; }
-    .paper{
-      background:#fff; border-radius:14px; padding:30px;
-      box-shadow:0 10px 25px rgba(0,0,0,.08);
-    }
-    .paper h2{ color:var(--secondary); margin:26px 0 10px; }
-    .paper h2:first-child{ margin-top:0; }
-    .paper p{ color:#2b2f33; margin-bottom:12px; }
-    .paper ul{ margin:10px 0 14px 20px; color:#2b2f33; }
-    .muted{ color:var(--gray); font-size:.95rem; }
-
-    .callout{
-      margin:18px 0; padding:16px 18px; border-radius:12px;
-      background:rgba(76,201,240,.12); border:1px solid rgba(76,201,240,.35);
-    }
-    .callout strong{ color:var(--secondary); }
-
-    footer{ background:var(--dark); color:#fff; padding:40px 0 25px; margin-top:60px; }
-    .copyright{ text-align:center; color:#aaa; font-size:.9rem; }
-
-    @media (max-width:768px){
-      .nav-links{ display:none; }
-      .mobile-menu{ display:block; }
-      .hero h1{ font-size:2.1rem; }
-      .paper{ padding:22px; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/site.css" />
+  <script defer src="assets/site.js"></script>
 </head>
-<body>
+
+<body class="theme-myconcept">
   <header>
     <div class="container">
       <nav class="navbar">
-        <a href="index.html" class="logo"><i class="fas fa-cloud"></i> MyConcept.Cloud</a>
+        <a href="index.html" class="logo">
+          <i class="fa-solid fa-cloud"></i>
+          MyConcept.Cloud
+        </a>
+
         <ul class="nav-links">
           <li><a href="features.html">Features</a></li>
           <li><a href="waitlist.html">Waitlist</a></li>
           <li><a href="privacy.html">Privacy</a></li>
         </ul>
-        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+
+        <div class="mobile-menu">☰</div>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Privacy Policy</h1>
-      <p class="muted">Effective date: January 24, 2026</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="paper">
-        <div class="callout">
-          <strong>Plain-English Summary:</strong> You own your ideas. We don’t sell your data. We collect only what we need to run the service.
-        </div>
-
-        <h2>1. Who We Are</h2>
-        <p>
-          This Privacy Policy describes how <strong>MyConcept.Cloud</strong> (“MyConcept,” “we,” “us,” or “our”)
-          collects, uses, and protects your information when you use our website and services.
-        </p>
-
-        <h2>2. Information We Collect</h2>
-        <p>We collect information in three main ways:</p>
-        <ul>
-          <li><strong>Information you provide:</strong> name, email address, waitlist details, and any notes you submit.</li>
-          <li><strong>Account data (if/when accounts exist):</strong> username, profile settings, and writing projects you create.</li>
-          <li><strong>Usage data:</strong> basic analytics like pages visited, device/browser type, and approximate location (city/region).</li>
-        </ul>
-
-        <h2>3. Your Creative Content</h2>
-        <p>
-          If you store creative content (concepts, scenes, characters, outlines), <strong>you retain ownership of that content</strong>.
-          We do not claim ownership over your work.
-        </p>
-        <p>
-          We use your content only to provide the service (saving, organizing, searching, and exporting),
-          and to troubleshoot issues if you request support.
-        </p>
-
-        <h2>4. How We Use Your Information</h2>
-        <p>We use your information to:</p>
-        <ul>
-          <li>Provide and maintain the service</li>
-          <li>Communicate with you (beta access, updates, support replies)</li>
-          <li>Improve features and user experience</li>
-          <li>Prevent fraud and maintain security</li>
-        </ul>
-
-        <h2>5. What We Do Not Do</h2>
-        <ul>
-          <li><strong>We do not sell your personal information</strong>.</li>
-          <li><strong>We do not claim ownership</strong> of your concepts or writing.</li>
-          <li>We do not publish your content publicly unless you explicitly choose to share it.</li>
-        </ul>
-
-        <h2>6. Sharing of Information</h2>
-        <p>We may share information only in limited cases:</p>
-        <ul>
-          <li><strong>Service providers:</strong> hosting, databases, email delivery, analytics (only what’s necessary).</li>
-          <li><strong>Legal obligations:</strong> if required by law, subpoena, or to protect rights/safety.</li>
-          <li><strong>Business changes:</strong> merger/acquisition (you will be notified if this happens).</li>
-        </ul>
-
-        <h2>7. Cookies & Analytics</h2>
-        <p>
-          We may use cookies or similar technologies for basic site functionality and analytics.
-          You can disable cookies in your browser settings, but some features may not work properly.
-        </p>
-
-        <h2>8. Data Retention</h2>
-        <p>
-          We keep your information only as long as needed to provide the service, comply with legal obligations,
-          or resolve disputes. You may request deletion of your data.
-        </p>
-
-        <h2>9. Security</h2>
-        <p>
-          We use reasonable administrative, technical, and physical safeguards to protect your information.
-          No system is 100% secure, but we design with security in mind.
-        </p>
-
-        <h2>10. Your Choices</h2>
-        <ul>
-          <li>Opt out of marketing emails (unsubscribe link)</li>
-          <li>Request access, correction, or deletion of your personal information</li>
-          <li>Export your content (when supported)</li>
-        </ul>
-
-        <h2>11. Children’s Privacy</h2>
-        <p>
-          MyConcept.Cloud is not intended for children under 13. We do not knowingly collect personal information
-          from children under 13.
-        </p>
-
-        <h2>12. Changes to This Policy</h2>
-        <p>
-          We may update this Privacy Policy from time to time. If we make material changes,
-          we will update the effective date and may provide additional notice.
-        </p>
-
-        <h2>13. Contact Us</h2>
-        <p>
-          For privacy questions or requests, contact us at:
-          <br><strong>Email:</strong> <span class="muted">privacy@myconcept.cloud</span> (replace with your real email)
-        </p>
-
-        <p class="muted" style="margin-top:18px;">
-          Note: This template is a general-purpose privacy policy and is not legal advice.
-          If you plan to launch publicly, consider having counsel review it.
+  <main>
+    <section class="hero hero-small">
+      <div class="container">
+        <p class="eyebrow">Privacy</p>
+        <h1>Your ideas belong to you.</h1>
+        <p class="hero-lead">
+          MyConcept.Cloud is designed around trust. Your concepts, notes, plots,
+          scenes, and outlines should stay private and under your control.
         </p>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="paper">
+          <h2>Privacy Policy</h2>
+          <p><strong>Effective Date:</strong> April 26, 2026</p>
+
+          <h3>1. Overview</h3>
+          <p>
+            MyConcept.Cloud is a native app for screenwriters to capture ideas and
+            develop them into plots, scenes, and outlines. This Privacy Policy explains
+            how information may be collected, used, and protected.
+          </p>
+
+          <h3>2. Information We Collect</h3>
+          <p>
+            If you join the waitlist, we may collect your name, email address, writing
+            type, experience level, and any optional message you choose to provide.
+          </p>
+          <p>
+            When the app becomes available, we may collect account information and app
+            content you create, such as concepts, notes, scenes, plots, and outlines,
+            only as needed to provide the app’s features.
+          </p>
+
+          <h3>3. How We Use Information</h3>
+          <p>
+            We use collected information to provide updates, manage early access,
+            improve the app, support users, and operate MyConcept.Cloud.
+          </p>
+
+          <h3>4. Your Creative Work</h3>
+          <p>
+            Your ideas, concepts, notes, plots, scenes, outlines, and other creative
+            material remain yours. MyConcept.Cloud does not claim ownership of your
+            creative work.
+          </p>
+
+          <h3>5. Email and Waitlist Updates</h3>
+          <p>
+            If you join the waitlist, we may email you about product updates, beta
+            access, launch information, and related MyConcept.Cloud news. You may
+            unsubscribe from these emails when that option is available.
+          </p>
+
+          <h3>6. Sharing Information</h3>
+          <p>
+            We do not sell your personal information. We may use trusted third-party
+            services to operate the website, manage waitlist submissions, send emails,
+            host data, or provide app functionality.
+          </p>
+
+          <h3>7. Data Security</h3>
+          <p>
+            We take reasonable steps to protect your information. However, no online
+            service, website, or app can guarantee complete security.
+          </p>
+
+          <h3>8. Data Access and Deletion</h3>
+          <p>
+            You may request access to or deletion of personal information associated
+            with your waitlist submission or account when applicable.
+          </p>
+
+          <h3>9. Children’s Privacy</h3>
+          <p>
+            MyConcept.Cloud is not intended for children under 13. We do not knowingly
+            collect personal information from children under 13.
+          </p>
+
+          <h3>10. Changes to This Policy</h3>
+          <p>
+            This Privacy Policy may be updated as MyConcept.Cloud develops. Updates
+            will be posted on this page with a revised effective date.
+          </p>
+
+          <h3>11. Contact</h3>
+          <p>
+            For privacy questions, contact:
+            <a href="mailto:support@myconcept.cloud">support@myconcept.cloud</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="container">
-      <div class="copyright">
-        <p>&copy; 2026 MyConcept. All rights reserved.</p>
-      </div>
+      <p>&copy; 2026 MyConcept.Cloud. All rights reserved.</p>
     </div>
   </footer>
-
-  <script>
-    // Mobile menu toggle
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
-    mobileMenu.addEventListener('click', () => {
-      navLinks.style.display = (navLinks.style.display === 'flex') ? 'none' : 'flex';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.background = 'white';
-      navLinks.style.position = 'absolute';
-      navLinks.style.right = '15px';
-      navLinks.style.top = '70px';
-      navLinks.style.padding = '15px';
-      navLinks.style.borderRadius = '12px';
-      navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.12)';
-      navLinks.style.zIndex = '9999';
-    });
-  </script>
 </body>
 </html>
