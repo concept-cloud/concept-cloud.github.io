@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Concept Cloud — UI Mockups</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cobalt: #1a56f0;
+  --cobalt-dark: #1240c4;
+  --cobalt-light: #4a7af5;
+  --cobalt-pale: #e8effe;
+  --cobalt-soft: #c7d9fc;
+  --white: #ffffff;
+  --off-white: #f8f9fc;
+  --gray-50: #f1f3f8;
+  --gray-100: #e4e8f2;
+  --gray-200: #c8cfe0;
+  --gray-400: #8892a8;
+  --gray-600: #4a5368;
+  --ink: #0d1220;
+  --coral: #f05a1a;
+  --sage: #10b981;
+  --amber: #f59e0b;
+  --shadow-sm: 0 1px 3px rgba(13,18,32,0.07);
+  --shadow-md: 0 4px 16px rgba(13,18,32,0.09);
+  --shadow-lg: 0 12px 40px rgba(13,18,32,0.13);
+  --shadow-blue: 0 4px 18px rgba(26,86,240,0.22);
+}
+body { font-family: 'Syne', sans-serif; background: #edf1fa; color: var(--ink); min-height: 100vh; }
+
+/* NAV */
+.top-nav { position: sticky; top: 0; z-index: 200; height: 60px; background: var(--white); border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; box-shadow: var(--shadow-sm); }
+.nav-logo { font-size: 18px; font-weight: 800; color: var(--cobalt); letter-spacing: -0.02em; display: flex; align-items: center; gap: 8px; }
+.nav-logo-icon { width: 28px; height: 28px; background: var(--cobalt); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.nav-logo span { color: var(--gray-600); font-weight: 500; }
+.nav-tabs { display: flex; gap: 2px; background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 10px; padding: 3px; }
+.nav-tab { padding: 6px 16px; border-radius: 7px; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.18s; color: var(--gray-400); border: none; background: none; font-family: 'Syne', sans-serif; }
+.nav-tab.active { background: var(--cobalt); color: white; box-shadow: var(--shadow-blue); }
+.nav-tab:hover:not(.active) { color: var(--cobalt); background: var(--cobalt-pale); }
+.back-btn {
+  text-decoration: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cobalt);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--cobalt-soft);
+  background: var(--cobalt-pale);
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: var(--cobalt);
+  color: white;
+}
+
+/* SECTIONS */
+.ss { display: none; padding: 48px 32px 80px; max-width: 1360px; margin: 0 auto; animation: fu 0.3s ease; }
+.ss.active { display: block; }
+@keyframes fu { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+.eyebrow { display: inline-flex; align-items: center; gap: 6px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cobalt); background: var(--cobalt-pale); border: 1px solid var(--cobalt-soft); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; }
+.stitle { font-size: clamp(30px,4vw,50px); font-weight: 800; color: var(--ink); letter-spacing: -0.03em; margin-bottom: 8px; line-height: 1.05; }
+.stitle em { font-style: italic; color: var(--cobalt); font-family: 'Lora', serif; font-weight: 600; }
+.sdesc { font-size: 15px; color: var(--gray-400); margin-bottom: 46px; font-weight: 400; max-width: 540px; line-height: 1.6; }
+
+/* TAGS */
+.tag { display: inline-flex; align-items: center; font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 7px; border-radius: 5px; }
+.t-scene { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+.t-char  { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+.t-loc   { background: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; }
+.t-plot  { background: #faf5ff; color: #6b21a8; border: 1px solid #e9d5ff; }
+.t-joke  { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+.t-set   { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+
+/* IPHONE */
+.iphone-showcase { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; align-items: flex-start; }
+.iphone-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.iphone-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-400); }
+.iphone { width: 335px; background: #17171c; border-radius: 46px; padding: 9px; box-shadow: var(--shadow-lg), 0 0 0 1px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.08); }
+.iphone-inner { background: var(--off-white); border-radius: 38px; overflow: hidden; min-height: 695px; display: flex; flex-direction: column; }
+.iphone-notch { height: 40px; background: #17171c; display: flex; align-items: center; justify-content: center; }
+.notch-pill { width: 108px; height: 30px; background: #17171c; border-radius: 18px; }
+.sbar { background: var(--white); display: flex; justify-content: space-between; align-items: center; padding: 7px 18px 3px; font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; color: var(--ink); }
+.sbar-r { display: flex; gap: 5px; align-items: center; font-size: 11px; }
+.app-hdr { background: var(--white); padding: 9px 16px 12px; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: space-between; }
+.app-logo { font-size: 16px; font-weight: 800; color: var(--cobalt); letter-spacing: -0.02em; }
+.app-logo span { color: var(--gray-600); font-weight: 500; }
+.hbtn { width: 33px; height: 33px; border-radius: 9px; background: var(--cobalt); color: white; display: flex; align-items: center; justify-content: center; font-size: 17px; box-shadow: var(--shadow-blue); }
+.hbtn-g { width: 33px; height: 33px; border-radius: 9px; background: var(--gray-50); border: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.cap { margin: 12px 14px; background: var(--white); border: 2px solid var(--cobalt); border-radius: 13px; padding: 11px 13px; display: flex; align-items: center; gap: 9px; box-shadow: var(--shadow-blue); }
+.cap-ph { font-size: 13px; color: var(--gray-400); flex: 1; }
+.cap-mic { width: 30px; height: 30px; border-radius: 7px; background: var(--cobalt); color: white; display: flex; align-items: center; justify-content: center; font-size: 13px; }
+.cap-cam { width: 30px; height: 30px; border-radius: 7px; background: var(--cobalt-pale); border: 1px solid var(--cobalt-soft); display: flex; align-items: center; justify-content: center; font-size: 13px; }
+.albl { padding: 3px 16px 7px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-400); }
+.ccard { margin: 0 14px 9px; background: var(--white); border: 1px solid var(--gray-100); border-radius: 13px; padding: 12px 13px; box-shadow: var(--shadow-sm); cursor: pointer; transition: all 0.14s; }
+.ccard:hover { border-color: var(--cobalt-soft); }
+.ccard-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.ccard-time { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gray-400); }
+.ccard-title { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 3px; line-height: 1.3; }
+.ccard-exc { font-size: 11px; color: var(--gray-400); line-height: 1.5; }
+.ccard-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 9px; }
+.ccard-tags { display: flex; gap: 3px; }
+.mt { font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 5px; border-radius: 4px; background: var(--gray-50); color: var(--gray-400); border: 1px solid var(--gray-100); }
+.ccard-more { font-size: 10px; color: var(--cobalt); font-weight: 700; font-family: 'DM Mono', monospace; }
+.tabbar { margin-top: auto; background: var(--white); border-top: 1px solid var(--gray-100); display: flex; justify-content: space-around; padding: 9px 0 18px; }
+.tabi { display: flex; flex-direction: column; align-items: center; gap: 2px; cursor: pointer; }
+.tabi-icon { font-size: 19px; }
+.tabi-lbl { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gray-400); }
+.tabi.on .tabi-lbl { color: var(--cobalt); }
+.tabi.on .tabi-icon { filter: drop-shadow(0 0 4px rgba(26,86,240,0.4)); }
+
+/* Detail */
+.det-back { padding: 9px 16px 0; font-size: 12px; color: var(--cobalt); font-weight: 700; cursor: pointer; }
+.det-hdr { padding: 12px 16px; background: var(--white); border-bottom: 1px solid var(--gray-100); }
+.det-tags { display: flex; gap: 5px; margin-bottom: 9px; }
+.det-title { font-family: 'Lora', serif; font-size: 21px; font-weight: 600; color: var(--ink); line-height: 1.2; margin-bottom: 5px; }
+.det-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gray-400); }
+.det-body { padding: 13px 16px; flex: 1; background: var(--off-white); overflow-y: auto; }
+.det-text { font-size: 12px; color: var(--gray-600); line-height: 1.7; margin-bottom: 16px; font-family: 'Lora', serif; }
+.det-sh { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cobalt); margin-bottom: 7px; }
+.lnk { background: var(--white); border: 1px solid var(--gray-100); border-radius: 9px; padding: 8px 10px; margin-bottom: 5px; display: flex; align-items: center; gap: 7px; }
+.lnk-title { font-size: 12px; font-weight: 600; color: var(--ink); }
+.exp-btn { margin: 10px 16px; background: var(--cobalt); color: white; border: none; border-radius: 11px; padding: 13px; font-size: 13px; font-weight: 700; width: calc(100% - 32px); cursor: pointer; font-family: 'Syne', sans-serif; box-shadow: var(--shadow-blue); }
+
+/* Coach */
+.coach-card { margin: 12px 14px; background: linear-gradient(135deg, var(--cobalt), var(--cobalt-dark)); border-radius: 15px; padding: 17px; color: white; box-shadow: var(--shadow-blue); }
+.coach-ey { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 5px; }
+.coach-title { font-family: 'Lora', serif; font-size: 17px; font-weight: 600; margin-bottom: 5px; }
+.coach-desc { font-size: 12px; color: rgba(255,255,255,0.72); line-height: 1.5; margin-bottom: 12px; }
+.coach-foot { display: flex; justify-content: space-between; align-items: center; }
+.coach-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.55); }
+.coach-start { padding: 7px 16px; background: white; color: var(--cobalt); border: none; border-radius: 7px; font-size: 12px; font-weight: 800; cursor: pointer; font-family: 'Syne', sans-serif; }
+.skill-row { margin: 0 14px 7px; background: var(--white); border: 1px solid var(--gray-100); border-radius: 11px; padding: 11px 13px; }
+.skill-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px; }
+.skill-name { font-size: 12px; font-weight: 700; color: var(--ink); }
+.skill-status { font-family: 'DM Mono', monospace; font-size: 9px; }
+.skill-bar { height: 4px; background: var(--gray-100); border-radius: 2px; overflow: hidden; }
+.skill-fill { height: 100%; border-radius: 2px; }
+.streak-row { margin: 0 14px; background: var(--cobalt-pale); border: 1px solid var(--cobalt-soft); border-radius: 11px; padding: 11px 13px; display: flex; justify-content: space-between; align-items: center; }
+.streak-val { font-size: 13px; font-weight: 800; color: var(--cobalt); }
+.streak-sub { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--cobalt-light); }
+.streak-num { font-family: 'Lora', serif; font-size: 26px; font-weight: 600; color: var(--cobalt); text-align: right; }
+
+/* MAC SIDEBAR */
+.mac-wrap { display: flex; background: #e0e6f5; border-radius: 14px; border: 1px solid var(--gray-200); box-shadow: var(--shadow-lg); overflow: hidden; height: 650px; max-width: 1050px; margin: 0 auto; }
+.fd-win { flex: 1; background: #fdfcf9; display: flex; flex-direction: column; min-width: 0; }
+.fd-bar { height: 36px; background: #edeae5; border-bottom: 1px solid #d5d1c8; display: flex; align-items: center; padding: 0 12px; gap: 7px; }
+.fd-dots { display: flex; gap: 5px; }
+.fdd { width: 11px; height: 11px; border-radius: 50%; }
+.fdd.r{background:#ff5f57;} .fdd.y{background:#febc2e;} .fdd.g{background:#28c840;}
+.fd-title { font-family: 'DM Mono', monospace; font-size: 11px; color: #888; margin-left: 8px; }
+.fd-tools { height: 30px; background: #f2efe9; border-bottom: 1px solid #d5d1c8; display: flex; align-items: center; padding: 0 12px; gap: 16px; }
+.fd-tool { font-size: 11px; color: #888; }
+.fd-page { flex: 1; padding: 34px 50px; overflow: hidden; background: white; }
+.fd-line { font-family: 'Courier New', monospace; font-size: 12.5px; color: #1a1a1a; line-height: 1.9; }
+.fd-line.sh { font-weight: bold; text-transform: uppercase; margin-top: 12px; }
+.fd-line.chr { text-align: center; font-weight: bold; text-transform: uppercase; margin-top: 9px; }
+.fd-line.dia { padding: 0 65px; }
+.fd-line.cur::after { content: '▌'; animation: blink 1s infinite; color: var(--cobalt); }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+.mcc-sidebar { width: 282px; flex-shrink: 0; background: var(--white); border-left: 1px solid var(--gray-100); display: flex; flex-direction: column; }
+.mcc-hdr { padding: 13px 15px 9px; border-bottom: 1px solid var(--gray-100); }
+.mcc-logo { font-size: 14px; font-weight: 800; color: var(--cobalt); letter-spacing: -0.02em; display: flex; justify-content: space-between; margin-bottom: 5px; }
+.mcc-logo span { color: var(--gray-400); font-weight: 500; }
+.mcc-sync { display: flex; align-items: center; gap: 5px; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--sage); }
+.sync-dot { width: 6px; height: 6px; background: var(--sage); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+.mcc-search { padding: 9px 13px; border-bottom: 1px solid var(--gray-100); }
+.sw { background: var(--off-white); border: 1.5px solid var(--cobalt); border-radius: 9px; padding: 7px 11px; display: flex; align-items: center; gap: 7px; }
+.sw-q { font-size: 12px; color: var(--ink); flex: 1; }
+.mcc-filters { padding: 7px 13px; display: flex; gap: 4px; flex-wrap: wrap; border-bottom: 1px solid var(--gray-100); }
+.fchip { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 7px; border-radius: 5px; cursor: pointer; border: 1px solid var(--gray-200); color: var(--gray-400); transition: all 0.12s; }
+.fchip.on { background: var(--cobalt); color: white; border-color: var(--cobalt); }
+.fchip:hover:not(.on) { border-color: var(--cobalt); color: var(--cobalt); }
+.mcc-results { flex: 1; overflow-y: auto; padding: 7px 9px; }
+.rlbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-400); padding: 3px 3px 7px; }
+.sri { padding: 9px 9px; border-radius: 9px; margin-bottom: 3px; cursor: pointer; border: 1px solid transparent; transition: all 0.12s; }
+.sri:hover { background: var(--off-white); border-color: var(--gray-100); }
+.sri.hl { background: var(--cobalt-pale); border-color: var(--cobalt-soft); }
+.sri-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; }
+.sri-name { font-size: 12px; font-weight: 700; color: var(--ink); }
+.sri-exc { font-size: 10px; color: var(--gray-400); line-height: 1.4; margin-bottom: 5px; }
+.sri-btns { display: flex; gap: 4px; }
+.sri-btn { font-family: 'DM Mono', monospace; font-size: 9px; padding: 3px 7px; border-radius: 5px; border: 1px solid var(--cobalt-soft); color: var(--cobalt); background: white; cursor: pointer; transition: all 0.12s; }
+.sri-btn:hover { background: var(--cobalt); color: white; }
+.ai-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cobalt); background: var(--cobalt-pale); border: 1px solid var(--cobalt-soft); padding: 2px 7px; border-radius: 4px; display: inline-block; margin: 9px 3px 6px; }
+.mcc-foot { padding: 9px 13px; border-top: 1px solid var(--gray-100); display: flex; gap: 5px; }
+.mcc-fbtn { flex: 1; padding: 7px 5px; border-radius: 7px; font-size: 11px; font-weight: 600; cursor: pointer; font-family: 'Syne', sans-serif; border: 1px solid var(--gray-200); background: white; color: var(--gray-600); }
+.mcc-fbtn:hover { border-color: var(--cobalt); color: var(--cobalt); }
+.mcc-fbtn.primary { background: var(--cobalt); color: white; border-color: var(--cobalt); box-shadow: var(--shadow-blue); }
+
+/* IPAD */
+.ipad-frame { max-width: 1050px; margin: 0 auto; background: #17171c; border-radius: 20px; padding: 9px; box-shadow: var(--shadow-lg); }
+.ipad-inner { background: var(--off-white); border-radius: 13px; overflow: hidden; height: 710px; display: flex; flex-direction: column; }
+.ipad-bar { height: 50px; background: var(--white); border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; padding: 0 18px; gap: 10px; }
+.ipad-logo { font-size: 15px; font-weight: 800; color: var(--cobalt); letter-spacing: -0.02em; margin-right: 6px; }
+.ipad-logo span { color: var(--gray-400); font-weight: 500; }
+.ipad-nt { font-size: 12px; font-weight: 600; padding: 5px 13px; border-radius: 7px; color: var(--gray-400); cursor: pointer; }
+.ipad-nt.on { background: var(--cobalt); color: white; box-shadow: var(--shadow-blue); }
+.ipad-sp { flex: 1; }
+.ipad-tbtn { padding: 6px 13px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer; font-family: 'Syne', sans-serif; }
+.ipad-tbtn.ghost { border: 1px solid var(--gray-200); background: white; color: var(--gray-600); }
+.ipad-tbtn.primary { background: var(--cobalt); color: white; border: none; box-shadow: var(--shadow-blue); }
+.ipad-body { flex: 1; display: flex; overflow: hidden; }
+.ipad-left { width: 235px; background: var(--white); border-right: 1px solid var(--gray-100); display: flex; flex-direction: column; flex-shrink: 0; }
+.panel-hdr { padding: 11px 13px; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: space-between; }
+.panel-hdr-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.17em; text-transform: uppercase; color: var(--cobalt); }
+.panel-add { width: 22px; height: 22px; background: var(--cobalt); color: white; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; cursor: pointer; }
+.ps-wrap { margin: 7px 11px; background: var(--off-white); border: 1px solid var(--gray-100); border-radius: 7px; padding: 5px 9px; display: flex; gap: 5px; align-items: center; font-size: 11px; color: var(--gray-400); }
+.concept-list { flex: 1; overflow-y: auto; padding: 5px; }
+.cl-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); padding: 3px 5px 5px; }
+.cl-item { padding: 8px 9px; border-radius: 9px; margin-bottom: 3px; cursor: grab; border: 1px solid var(--gray-100); background: var(--off-white); transition: all 0.12s; }
+.cl-item:hover { border-color: var(--cobalt-soft); background: var(--cobalt-pale); }
+.cl-item-title { font-size: 11px; font-weight: 700; color: var(--ink); line-height: 1.3; margin-top: 3px; }
+.ipad-center { flex: 1; display: flex; flex-direction: column; }
+.ol-hdr { padding: 13px 16px; background: var(--white); border-bottom: 1px solid var(--gray-100); }
+.ol-title { font-family: 'Lora', serif; font-size: 19px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+.ol-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gray-400); }
+.ol-body { flex: 1; overflow-y: auto; padding: 13px 15px; background: var(--off-white); }
+.act-block { margin-bottom: 20px; }
+.act-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.17em; text-transform: uppercase; color: var(--cobalt); display: flex; align-items: center; gap: 7px; margin-bottom: 9px; }
+.act-lbl::after { content:''; flex:1; height:1px; background:var(--cobalt-soft); }
+.beat { background: var(--white); border: 1px solid var(--gray-100); border-radius: 9px; padding: 10px 12px; margin-bottom: 6px; display: flex; gap: 9px; cursor: pointer; transition: all 0.12s; box-shadow: var(--shadow-sm); }
+.beat:hover { border-color: var(--cobalt-soft); }
+.beat.drop { border-color: var(--cobalt); border-style: dashed; background: var(--cobalt-pale); }
+.beat-num { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gray-400); min-width: 16px; margin-top: 1px; }
+.beat-title { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.beat-desc { font-size: 11px; color: var(--gray-400); line-height: 1.4; }
+.beat-badge { display: inline-flex; align-items: center; font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 6px; border-radius: 4px; background: var(--cobalt-pale); border: 1px solid var(--cobalt-soft); color: var(--cobalt); margin-top: 4px; }
+.add-beat { border: 1.5px dashed var(--gray-200); border-radius: 9px; padding: 8px; text-align: center; font-size: 11px; color: var(--gray-400); cursor: pointer; margin-bottom: 5px; transition: all 0.12s; }
+.add-beat:hover { border-color: var(--cobalt); color: var(--cobalt); background: var(--cobalt-pale); }
+.ipad-right { width: 255px; background: var(--white); border-left: 1px solid var(--gray-100); display: flex; flex-direction: column; flex-shrink: 0; }
+.map-canvas { flex: 1; position: relative; overflow: hidden; padding: 10px; }
+.mn { position: absolute; background: var(--white); border: 1.5px solid var(--gray-200); border-radius: 7px; padding: 6px 8px; font-size: 10px; font-weight: 700; color: var(--ink); cursor: pointer; transition: all 0.12s; max-width: 92px; box-shadow: var(--shadow-sm); }
+.mn:hover { border-color: var(--cobalt); color: var(--cobalt); }
+.mn.root { background: var(--cobalt); color: white; border-color: var(--cobalt); font-size: 11px; box-shadow: var(--shadow-blue); }
+svg.lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.map-foot { padding: 9px 13px; border-top: 1px solid var(--gray-100); font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gray-400); }
+
+/* SOCIAL */
+.social-wrap { display: grid; grid-template-columns: 215px 1fr 255px; background: var(--white); border-radius: 14px; border: 1px solid var(--gray-100); box-shadow: var(--shadow-lg); overflow: hidden; height: 670px; max-width: 1050px; margin: 0 auto; }
+.soc-left { background: var(--white); border-right: 1px solid var(--gray-100); padding: 18px 13px; display: flex; flex-direction: column; gap: 2px; }
+.soc-logo { font-size: 15px; font-weight: 800; color: var(--cobalt); letter-spacing: -0.02em; margin-bottom: 20px; padding: 0 5px; }
+.soc-logo span { color: var(--gray-400); font-weight: 500; }
+.soc-nav { display: flex; align-items: center; gap: 8px; padding: 8px 9px; border-radius: 9px; font-size: 13px; font-weight: 600; color: var(--gray-400); cursor: pointer; transition: all 0.12s; }
+.soc-nav:hover { background: var(--off-white); color: var(--ink); }
+.soc-nav.on { background: var(--cobalt-pale); color: var(--cobalt); }
+.soc-sp { flex: 1; }
+.soc-profile { display: flex; align-items: center; gap: 9px; padding: 9px; background: var(--off-white); border: 1px solid var(--gray-100); border-radius: 9px; }
+.soc-av { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--cobalt), var(--cobalt-light)); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: white; }
+.soc-pname { font-size: 12px; font-weight: 700; color: var(--ink); }
+.soc-ptier { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--cobalt); }
+.soc-center { overflow-y: auto; background: var(--off-white); }
+.soc-topbar { position: sticky; top: 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-100); padding: 13px 18px; display: flex; align-items: center; justify-content: space-between; z-index: 10; }
+.soc-ptitle { font-size: 19px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+.soc-sort { display: flex; gap: 2px; background: var(--gray-50); border: 1px solid var(--gray-100); padding: 3px; border-radius: 7px; }
+.sort-btn { font-size: 11px; font-weight: 700; padding: 4px 11px; border-radius: 5px; cursor: pointer; color: var(--gray-400); border: none; background: none; font-family: 'Syne', sans-serif; }
+.sort-btn.on { background: var(--cobalt); color: white; }
+.feed { padding: 13px 16px; display: flex; flex-direction: column; gap: 11px; }
+.chal-banner { background: linear-gradient(135deg, var(--cobalt), var(--cobalt-dark)); border-radius: 13px; padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; gap: 14px; box-shadow: var(--shadow-blue); }
+.cb-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 4px; }
+.cb-title { font-size: 15px; font-weight: 800; color: white; margin-bottom: 3px; }
+.cb-meta { font-size: 11px; color: rgba(255,255,255,0.62); }
+.cb-btn { padding: 9px 16px; background: white; color: var(--cobalt); border: none; border-radius: 9px; font-size: 12px; font-weight: 800; cursor: pointer; white-space: nowrap; font-family: 'Syne', sans-serif; }
+.gpills { display: flex; gap: 5px; flex-wrap: wrap; }
+.gp { padding: 5px 13px; border-radius: 18px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1.5px solid var(--gray-200); color: var(--gray-400); transition: all 0.12s; }
+.gp.on { background: var(--cobalt); color: white; border-color: var(--cobalt); box-shadow: var(--shadow-blue); }
+.gp:hover:not(.on) { border-color: var(--cobalt); color: var(--cobalt); }
+.scc { background: var(--white); border: 1px solid var(--gray-100); border-radius: 13px; padding: 14px 16px; cursor: pointer; transition: all 0.14s; box-shadow: var(--shadow-sm); }
+.scc:hover { border-color: var(--cobalt-soft); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.scc-hdr { display: flex; align-items: center; gap: 9px; margin-bottom: 10px; }
+.scc-av { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: white; flex-shrink: 0; }
+.scc-aname { font-size: 13px; font-weight: 700; color: var(--ink); }
+.scc-ameta { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gray-400); }
+.scc-title { font-family: 'Lora', serif; font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 5px; line-height: 1.2; }
+.scc-exc { font-size: 12px; color: var(--gray-400); line-height: 1.5; margin-bottom: 11px; }
+.scc-foot { display: flex; align-items: center; justify-content: space-between; }
+.scc-stats { display: flex; gap: 12px; }
+.scc-stat { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--gray-400); }
+.scc-acts { display: flex; gap: 5px; }
+.scc-act { font-size: 11px; font-weight: 600; padding: 5px 11px; border-radius: 7px; border: 1.5px solid var(--gray-200); color: var(--gray-400); cursor: pointer; background: none; font-family: 'Syne', sans-serif; transition: all 0.12s; }
+.scc-act:hover { color: var(--cobalt); border-color: var(--cobalt); }
+.scc-act.cw { background: var(--cobalt); color: white; border-color: var(--cobalt); box-shadow: var(--shadow-blue); }
+.soc-right { border-left: 1px solid var(--gray-100); padding: 16px 13px; overflow-y: auto; }
+.soc-rh { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cobalt); margin-bottom: 10px; }
+.trend-item { display: flex; gap: 9px; padding: 7px 0; border-bottom: 1px solid var(--gray-100); cursor: pointer; align-items: center; }
+.trend-rank { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gray-400); min-width: 15px; }
+.trend-name { font-size: 12px; font-weight: 700; color: var(--ink); }
+.trend-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gray-400); }
+.sc-r { background: var(--off-white); border: 1px solid var(--gray-100); border-radius: 9px; padding: 11px 12px; margin-bottom: 7px; }
+.sc-name { font-size: 12px; font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 5px; margin-bottom: 3px; }
+.sc-badge { font-family: 'DM Mono', monospace; font-size: 8px; padding: 2px 5px; background: var(--cobalt-pale); color: var(--cobalt); border-radius: 3px; border: 1px solid var(--cobalt-soft); }
+.sc-brief { font-size: 11px; color: var(--gray-400); line-height: 1.4; margin-bottom: 7px; }
+.sc-btn { font-family: 'DM Mono', monospace; font-size: 9px; padding: 4px 9px; border-radius: 5px; border: 1.5px solid var(--cobalt); color: var(--cobalt); background: white; cursor: pointer; }
+
+/* STUDIO */
+.studio-wrap { background: var(--white); border-radius: 14px; border: 1px solid var(--gray-100); box-shadow: var(--shadow-lg); overflow: hidden; max-width: 1050px; margin: 0 auto; }
+.stu-bar { height: 52px; background: var(--cobalt); display: flex; align-items: center; padding: 0 20px; gap: 16px; }
+.stu-brand { display: flex; align-items: center; gap: 9px; }
+.stu-icon { width: 30px; height: 30px; background: rgba(255,255,255,0.2); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; }
+.stu-bname { font-size: 13px; font-weight: 800; color: white; }
+.stu-btier { font-family: 'DM Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.6); }
+.stu-nav { display: flex; gap: 1px; flex: 1; justify-content: center; }
+.stu-ni { padding: 5px 13px; border-radius: 7px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.62); cursor: pointer; transition: all 0.12s; }
+.stu-ni:hover { color: white; background: rgba(255,255,255,0.1); }
+.stu-ni.on { background: rgba(255,255,255,0.2); color: white; }
+.stu-acts { display: flex; gap: 7px; }
+.stu-btn { padding: 6px 13px; border-radius: 7px; font-size: 11px; font-weight: 700; cursor: pointer; font-family: 'Syne', sans-serif; border: 1.5px solid rgba(255,255,255,0.3); background: transparent; color: white; }
+.stu-btn.primary { background: white; color: var(--cobalt); border-color: white; }
+.stu-body { display: flex; height: 597px; }
+.stu-sidebar { width: 205px; border-right: 1px solid var(--gray-100); padding: 12px; display: flex; flex-direction: column; gap: 1px; flex-shrink: 0; background: var(--off-white); }
+.stu-ss { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray-400); padding: 9px 5px 3px; }
+.stu-si { display: flex; align-items: center; justify-content: space-between; padding: 7px 7px; border-radius: 7px; font-size: 12px; font-weight: 600; color: var(--gray-400); cursor: pointer; transition: all 0.12s; }
+.stu-si:hover { background: var(--white); color: var(--ink); }
+.stu-si.on { background: var(--cobalt-pale); color: var(--cobalt); }
+.stu-badge { font-family: 'DM Mono', monospace; font-size: 9px; padding: 1px 5px; border-radius: 7px; background: var(--cobalt); color: white; }
+.stu-main { flex: 1; overflow-y: auto; padding: 20px; }
+.stu-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; margin-bottom: 20px; }
+.stu-stat { background: var(--off-white); border: 1px solid var(--gray-100); border-radius: 11px; padding: 13px; }
+.stu-sv { font-family: 'Lora', serif; font-size: 28px; font-weight: 600; color: var(--ink); line-height: 1; margin-bottom: 3px; }
+.stu-sl { font-family: 'DM Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--gray-400); }
+.stu-sd { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--sage); margin-top: 3px; }
+.stu-sh { display: flex; align-items: center; justify-content: space-between; margin-bottom: 11px; }
+.stu-sht { font-size: 14px; font-weight: 800; color: var(--ink); }
+.stu-sha { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--cobalt); cursor: pointer; }
+.brief-card { background: var(--white); border: 1px solid var(--gray-100); border-radius: 11px; padding: 14px 15px; margin-bottom: 9px; cursor: pointer; transition: all 0.12s; box-shadow: var(--shadow-sm); }
+.brief-card:hover { border-color: var(--cobalt-soft); }
+.brief-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px; gap: 10px; }
+.brief-title { font-size: 13px; font-weight: 800; color: var(--ink); margin-bottom: 3px; }
+.brief-desc { font-size: 11px; color: var(--gray-400); line-height: 1.5; }
+.bst { font-family: 'DM Mono', monospace; font-size: 9px; padding: 3px 7px; border-radius: 5px; white-space: nowrap; }
+.bs-open { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+.bs-rev { background: var(--cobalt-pale); color: var(--cobalt); border: 1px solid var(--cobalt-soft); }
+.brief-foot { display: flex; gap: 12px; margin-top: 9px; }
+.bfs { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gray-400); }
+.bfd { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--coral); }
+.room-card { background: var(--white); border: 1px solid var(--gray-100); border-radius: 11px; padding: 12px 14px; margin-bottom: 7px; display: flex; align-items: center; gap: 11px; cursor: pointer; transition: all 0.12s; box-shadow: var(--shadow-sm); }
+.room-card:hover { border-color: var(--cobalt-soft); }
+.room-icon { width: 38px; height: 38px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+.room-name { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.room-meta { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gray-400); }
+.room-sec { display: flex; align-items: center; gap: 3px; font-family: 'DM Mono', monospace; font-size: 9px; color: var(--sage); white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div style="display:flex;align-items:center;gap:20px;">
+    
+    <!-- Back button -->
+    <a href="index.html" class="back-btn">← Back</a>
+
+    <div class="nav-logo">
+      <div class="nav-logo-icon">☁</div>
+      Concept<span>Cloud</span>
+    </div>
+  </div>
+
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="show('iphone',this)">📱 iPhone</button>
+    <button class="nav-tab" onclick="show('mac',this)">🖥 Mac Sidebar</button>
+    <button class="nav-tab" onclick="show('ipad',this)">📐 iPad</button>
+    <button class="nav-tab" onclick="show('social',this)">🌐 Social</button>
+    <button class="nav-tab" onclick="show('studio',this)">🏢 Studio</button>
+  </div>
+</nav>
+
+<!-- iPHONE -->
+<section class="ss active" id="screen-iphone">
+  <div class="eyebrow">📱 Mobile Experience</div>
+  <h1 class="stitle">The iPhone <em>App</em></h1>
+  <p class="sdesc">Quick capture, smart tagging, expandable concept vault — always in your pocket, always instant.</p>
+  <div class="iphone-showcase">
+
+    <div class="iphone-wrap">
+      <div class="iphone"><div class="iphone-inner">
+        <div class="iphone-notch"><div class="notch-pill"></div></div>
+        <div class="sbar"><span>9:41</span><div class="sbar-r"><span>●●●</span><span>WiFi</span><span>🔋</span></div></div>
+        <div class="app-hdr"><div class="app-logo">Concept<span>Cloud</span></div><div style="display:flex;gap:6px;"><div class="hbtn-g">🔍</div><div class="hbtn">+</div></div></div>
+        <div class="cap"><span style="font-size:17px;">✍️</span><div class="cap-ph">What just came to mind?</div><div class="cap-mic">🎙</div><div class="cap-cam">📷</div></div>
+        <div class="albl">Recent Concepts</div>
+        <div class="ccard"><div class="ccard-top"><span class="tag t-scene">Scene</span><span class="ccard-time">2m ago</span></div><div class="ccard-title">The lighthouse confrontation</div><div class="ccard-exc">Two brothers, one hiding a secret for 20 years. Storm coming off the coast...</div><div class="ccard-foot"><div class="ccard-tags"><span class="mt">#thriller</span><span class="mt">#drama</span><span class="mt">#act2</span></div><span class="ccard-more">Expand →</span></div></div>
+        <div class="ccard"><div class="ccard-top"><span class="tag t-char">Character</span><span class="ccard-time">1h ago</span></div><div class="ccard-title">Marcus Delray — the fixer</div><div class="ccard-exc">Ex-prosecutor who cleans up crimes for the wealthy. Hates himself for it.</div><div class="ccard-foot"><div class="ccard-tags"><span class="mt">#antihero</span><span class="mt">#lead</span></div><span class="ccard-more">Expand →</span></div></div>
+        <div class="ccard"><div class="ccard-top"><span class="tag t-joke">Joke</span><span class="ccard-time">3h ago</span></div><div class="ccard-title">The therapy cold open</div><div class="ccard-exc">Therapist realizes her patient is describing her own marriage.</div><div class="ccard-foot"><div class="ccard-tags"><span class="mt">#comedy</span><span class="mt">#cold-open</span></div><span class="ccard-more">Expand →</span></div></div>
+        <div class="tabbar"><div class="tabi on"><div class="tabi-icon">☁️</div><div class="tabi-lbl">Vault</div></div><div class="tabi"><div class="tabi-icon">🔗</div><div class="tabi-lbl">Projects</div></div><div class="tabi"><div class="tabi-icon">🌐</div><div class="tabi-lbl">Discover</div></div><div class="tabi"><div class="tabi-icon">📚</div><div class="tabi-lbl">Coach</div></div><div class="tabi"><div class="tabi-icon">👤</div><div class="tabi-lbl">Profile</div></div></div>
+      </div></div>
+      <div class="iphone-label">Home — Concept Vault</div>
+    </div>
+
+    <div class="iphone-wrap">
+      <div class="iphone"><div class="iphone-inner">
+        <div class="iphone-notch"><div class="notch-pill"></div></div>
+        <div class="sbar"><span>9:41</span><div class="sbar-r"><span>●●●</span><span>WiFi</span><span>🔋</span></div></div>
+        <div class="det-back">← Vault</div>
+        <div class="det-hdr"><div class="det-tags"><span class="tag t-scene">Scene</span><span class="tag t-plot">Plot</span></div><div class="det-title">The lighthouse confrontation</div><div class="det-meta">Created 2 min ago · Version 1 · Private</div></div>
+        <div class="det-body"><p class="det-text">Two brothers haven't spoken in 20 years. Thomas lives at Cape Mercy as lighthouse keeper — voluntary exile. David arrives in a storm: their mother is dying. But the real reason surfaces fast.</p><div class="det-sh">Linked Concepts</div><div class="lnk"><span class="tag t-char" style="font-size:8px;">Character</span><div class="lnk-title">Thomas Vane — lighthouse keeper</div></div><div class="lnk"><span class="tag t-loc" style="font-size:8px;">Location</span><div class="lnk-title">Cape Mercy, Maine coastline</div></div><div class="lnk"><span class="tag t-plot" style="font-size:8px;">Plot</span><div class="lnk-title">The secret Thomas has kept</div></div><div class="det-sh" style="margin-top:13px;">Tags</div><div style="display:flex;gap:3px;flex-wrap:wrap;"><span class="mt">#thriller</span><span class="mt">#drama</span><span class="mt">#act2</span><span class="mt">#brothers</span><span class="mt" style="color:var(--cobalt);border-color:var(--cobalt-soft);">+ Add tag</span></div></div>
+        <button class="exp-btn">＋ Expand into Plot Thread</button>
+        <div class="tabbar"><div class="tabi on"><div class="tabi-icon">☁️</div><div class="tabi-lbl">Vault</div></div><div class="tabi"><div class="tabi-icon">🔗</div><div class="tabi-lbl">Projects</div></div><div class="tabi"><div class="tabi-icon">🌐</div><div class="tabi-lbl">Discover</div></div><div class="tabi"><div class="tabi-icon">📚</div><div class="tabi-lbl">Coach</div></div><div class="tabi"><div class="tabi-icon">👤</div><div class="tabi-lbl">Profile</div></div></div>
+      </div></div>
+      <div class="iphone-label">Concept Detail — Expandable</div>
+    </div>
+
+    <div class="iphone-wrap">
+      <div class="iphone"><div class="iphone-inner">
+        <div class="iphone-notch"><div class="notch-pill"></div></div>
+        <div class="sbar"><span>9:41</span><div class="sbar-r"><span>●●●</span><span>WiFi</span><span>🔋</span></div></div>
+        <div class="app-hdr"><div class="app-logo">Writing <span>Coach</span></div><div style="padding:4px 9px;background:var(--cobalt);color:white;border-radius:7px;font-size:10px;font-weight:800;box-shadow:var(--shadow-blue);">PRO</div></div>
+        <div class="coach-card"><div class="coach-ey">🎯 Today's Exercise</div><div class="coach-title">The Silent Scene</div><div class="coach-desc">Write a 1-page scene where two characters communicate everything without dialogue. Focus: subtext through action.</div><div class="coach-foot"><div class="coach-meta">~20 min · Subtext</div><button class="coach-start">Start →</button></div></div>
+        <div class="albl" style="margin-top:11px;">Your Weak Spots</div>
+        <div class="skill-row"><div class="skill-top"><div class="skill-name">Scene Transitions</div><div class="skill-status" style="color:var(--coral);">Needs work</div></div><div class="skill-bar"><div class="skill-fill" style="width:35%;background:var(--coral);"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><div class="skill-name">Dialogue Rhythm</div><div class="skill-status" style="color:var(--amber);">Improving</div></div><div class="skill-bar"><div class="skill-fill" style="width:62%;background:var(--amber);"></div></div></div>
+        <div class="skill-row"><div class="skill-top"><div class="skill-name">Character Want vs Need</div><div class="skill-status" style="color:var(--sage);">Strong</div></div><div class="skill-bar"><div class="skill-fill" style="width:84%;background:var(--sage);"></div></div></div>
+        <div class="streak-row" style="margin-top:9px;"><div><div class="streak-val">🔥 14-day streak</div><div class="streak-sub">Best: 31 days</div></div><div><div class="streak-num">47</div><div style="font-family:'DM Mono',monospace;font-size:9px;color:var(--cobalt);text-align:right;">exercises done</div></div></div>
+        <div class="tabbar" style="margin-top:auto;"><div class="tabi"><div class="tabi-icon">☁️</div><div class="tabi-lbl">Vault</div></div><div class="tabi"><div class="tabi-icon">🔗</div><div class="tabi-lbl">Projects</div></div><div class="tabi"><div class="tabi-icon">🌐</div><div class="tabi-lbl">Discover</div></div><div class="tabi on"><div class="tabi-icon">📚</div><div class="tabi-lbl">Coach</div></div><div class="tabi"><div class="tabi-icon">👤</div><div class="tabi-lbl">Profile</div></div></div>
+      </div></div>
+      <div class="iphone-label">Pro Writing Coach</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MAC SIDEBAR -->
+<section class="ss" id="screen-mac">
+  <div class="eyebrow">🖥 Desktop Experience</div>
+  <h1 class="stitle">Mac <em>Sidebar</em></h1>
+  <p class="sdesc">A slim search panel living beside Final Draft. Find any saved concept instantly without leaving your script.</p>
+  <div class="mac-wrap">
+    <div class="fd-win">
+      <div class="fd-bar"><div class="fd-dots"><div class="fdd r"></div><div class="fdd y"></div><div class="fdd g"></div></div><div class="fd-title">CAPE MERCY — Draft 3.fdx — Final Draft 13</div></div>
+      <div class="fd-tools"><span class="fd-tool">File</span><span class="fd-tool">Edit</span><span class="fd-tool">Format</span><span class="fd-tool">Production</span><span class="fd-tool">View</span><span class="fd-tool">Tools</span></div>
+      <div class="fd-page">
+        <div class="fd-line sh">EXT. CAPE MERCY LIGHTHOUSE — NIGHT</div>
+        <div class="fd-line">A storm hammers the coast. The lighthouse beam cuts through horizontal rain. A rental car sits crooked in the gravel lot, one door left open.</div>
+        <div class="fd-line sh" style="margin-top:16px;">INT. LIGHTHOUSE — BASE — CONTINUOUS</div>
+        <div class="fd-line">THOMAS VANE (58, weathered, deliberate) stands at the foot of the stairs. He hasn't moved since he heard the knock. He already knows who it is.</div>
+        <div class="fd-line" style="margin-top:5px;">The door opens. DAVID VANE (52, city-soft, soaked through) steps in. Twenty years collapse into this doorway.</div>
+        <div class="fd-line chr">DAVID</div>
+        <div class="fd-line dia">Mom's dying.</div>
+        <div class="fd-line chr">THOMAS</div>
+        <div class="fd-line dia cur">I know why you're really here.</div>
+      </div>
+    </div>
+    <div class="mcc-sidebar">
+      <div class="mcc-hdr"><div class="mcc-logo">Concept<span>Cloud</span><span style="font-size:9px;color:var(--gray-400);font-weight:400;">v2.1</span></div><div class="mcc-sync"><div class="sync-dot"></div>Synced · 247 concepts</div></div>
+      <div class="mcc-search"><div class="sw"><span style="font-size:12px;">🔍</span><div class="sw-q">lighthouse...</div><span style="font-size:10px;color:var(--gray-400);cursor:pointer;">✕</span></div></div>
+      <div class="mcc-filters"><div class="fchip on">All</div><div class="fchip">Scene</div><div class="fchip">Character</div><div class="fchip">Location</div><div class="fchip">Plot</div></div>
+      <div class="mcc-results">
+        <div class="rlbl">3 results for "lighthouse"</div>
+        <div class="sri hl"><div class="sri-top"><div class="sri-name">The lighthouse confrontation</div><span class="tag t-scene">Scene</span></div><div class="sri-exc">Two brothers, one secret for 20 years. Storm coming in...</div><div class="sri-btns"><button class="sri-btn">Copy</button><button class="sri-btn">Drag</button><button class="sri-btn">Export</button></div></div>
+        <div class="sri"><div class="sri-top"><div class="sri-name">Cape Mercy lighthouse, Maine</div><span class="tag t-loc">Location</span></div><div class="sri-exc">Remote. 1890s construction. Keeper's quarters above lamp room...</div><div class="sri-btns"><button class="sri-btn">Copy</button><button class="sri-btn">Drag</button><button class="sri-btn">Export</button></div></div>
+        <div class="sri"><div class="sri-top"><div class="sri-name">The light that goes dark</div><span class="tag t-plot">Plot</span></div><div class="sri-exc">Lighthouse fails at the exact moment the secret is revealed...</div><div class="sri-btns"><button class="sri-btn">Copy</button><button class="sri-btn">Drag</button><button class="sri-btn">Export</button></div></div>
+        <div class="ai-lbl">✦ AI Suggested</div>
+        <div class="sri" style="border-color:var(--cobalt-soft);background:var(--cobalt-pale);"><div class="sri-top"><div class="sri-name">Thomas's exile motivation</div><span class="tag t-char">Character</span></div><div class="sri-exc">Connects to current scene — similar guilt and distance themes...</div><div class="sri-btns"><button class="sri-btn">Copy</button><button class="sri-btn">View</button></div></div>
+      </div>
+      <div class="mcc-foot"><button class="mcc-fbtn">⚙ Settings</button><button class="mcc-fbtn">＋ Capture</button><button class="mcc-fbtn primary">↗ Export</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- iPAD -->
+<section class="ss" id="screen-ipad">
+  <div class="eyebrow">📐 Tablet Experience</div>
+  <h1 class="stitle">iPad Outline <em>Builder</em></h1>
+  <p class="sdesc">Three-panel canvas: concept vault, beat outline, and visual story map — all working simultaneously.</p>
+  <div class="ipad-frame"><div class="ipad-inner">
+    <div class="ipad-bar"><div class="ipad-logo">Concept<span>Cloud</span></div><div class="ipad-nt on">Outline</div><div class="ipad-nt">Story Map</div><div class="ipad-nt">Corkboard</div><div class="ipad-sp"></div><button class="ipad-tbtn ghost">↗ Export Fountain</button><button class="ipad-tbtn primary">Share</button></div>
+    <div class="ipad-body">
+      <div class="ipad-left">
+        <div class="panel-hdr"><div class="panel-hdr-lbl">Concept Vault</div><div class="panel-add">+</div></div>
+        <div class="ps-wrap">🔍 Search concepts...</div>
+        <div class="concept-list">
+          <div class="cl-lbl">Unused · 12</div>
+          <div class="cl-item"><span class="tag t-scene" style="font-size:8px;">Scene</span><div class="cl-item-title">The lighthouse confrontation</div></div>
+          <div class="cl-item"><span class="tag t-char" style="font-size:8px;">Character</span><div class="cl-item-title">Marcus Delray — the fixer</div></div>
+          <div class="cl-item"><span class="tag t-loc" style="font-size:8px;">Location</span><div class="cl-item-title">Cape Mercy coastline</div></div>
+          <div class="cl-item"><span class="tag t-plot" style="font-size:8px;">Plot</span><div class="cl-item-title">The secret Thomas kept</div></div>
+          <div class="cl-item"><span class="tag t-joke" style="font-size:8px;">Joke</span><div class="cl-item-title">Therapy cold open</div></div>
+          <div class="cl-item"><span class="tag t-set" style="font-size:8px;">Setting</span><div class="cl-item-title">1990s coastal New England</div></div>
+        </div>
+      </div>
+      <div class="ipad-center">
+        <div class="ol-hdr"><div class="ol-title">CAPE MERCY — Feature Outline</div><div class="ol-meta">Draft 1 · 3 acts · 18 beats · Edited 4 min ago</div></div>
+        <div class="ol-body">
+          <div class="act-block">
+            <div class="act-lbl">Act One — Setup</div>
+            <div class="beat"><div class="beat-num">01</div><div><div class="beat-title">Opening Image</div><div class="beat-desc">Storm-battered lighthouse. Thomas alone with his ghosts.</div><div class="beat-badge">📍 Cape Mercy location</div></div></div>
+            <div class="beat"><div class="beat-num">02</div><div><div class="beat-title">The Inciting Incident</div><div class="beat-desc">David arrives. Mom is dying. Both know that's not the real reason.</div></div></div>
+            <div class="beat drop"><div class="beat-num" style="color:var(--cobalt);">03</div><div><div class="beat-title" style="color:var(--cobalt);font-style:italic;">Drop a concept here...</div></div></div>
+            <div class="add-beat">＋ Add Beat</div>
+          </div>
+          <div class="act-block">
+            <div class="act-lbl">Act Two — Confrontation</div>
+            <div class="beat"><div class="beat-num">04</div><div><div class="beat-title">The First Lie</div><div class="beat-desc">Thomas insists he's at peace. David knows better.</div><div class="beat-badge">👤 Thomas character arc</div></div></div>
+            <div class="beat"><div class="beat-num">05</div><div><div class="beat-title">The Lighthouse Confrontation</div><div class="beat-desc">Truth comes out at the peak of the storm.</div><div class="beat-badge">🎬 Lighthouse scene concept</div></div></div>
+            <div class="add-beat">＋ Add Beat</div>
+          </div>
+        </div>
+      </div>
+      <div class="ipad-right">
+        <div class="panel-hdr"><div class="panel-hdr-lbl">Story Map</div></div>
+        <div class="map-canvas">
+          <svg class="lines"><line x1="118" y1="48" x2="52" y2="128" stroke="#c7d9fc" stroke-width="1.5"/><line x1="118" y1="48" x2="186" y2="120" stroke="#c7d9fc" stroke-width="1.5"/><line x1="118" y1="48" x2="116" y2="188" stroke="#c7d9fc" stroke-width="1.5"/><line x1="52" y1="128" x2="40" y2="225" stroke="#dbeafe" stroke-width="1"/><line x1="186" y1="120" x2="196" y2="215" stroke="#dbeafe" stroke-width="1"/><line x1="116" y1="188" x2="72" y2="296" stroke="#dbeafe" stroke-width="1"/><line x1="116" y1="188" x2="162" y2="286" stroke="#dbeafe" stroke-width="1"/></svg>
+          <div class="mn root" style="left:70px;top:18px;width:92px;text-align:center;">Cape Mercy</div>
+          <div class="mn" style="left:6px;top:106px;">Thomas Vane</div>
+          <div class="mn" style="left:148px;top:98px;">David Vane</div>
+          <div class="mn" style="left:72px;top:165px;">The Secret</div>
+          <div class="mn" style="left:2px;top:207px;font-size:9px;">Mom's death</div>
+          <div class="mn" style="left:158px;top:198px;font-size:9px;">The fixer</div>
+          <div class="mn" style="left:26px;top:278px;font-size:9px;">Forgiveness?</div>
+          <div class="mn" style="left:130px;top:268px;font-size:9px;">Confrontation</div>
+        </div>
+        <div class="map-foot">8 nodes · 7 connections · Tap to expand</div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- SOCIAL -->
+<section class="ss" id="screen-social">
+  <div class="eyebrow">🌐 Community Platform</div>
+  <h1 class="stitle">Discovery <em>Feed</em></h1>
+  <p class="sdesc">Trending concepts, studio briefs, writing challenges, and co-writer matching — your creative community.</p>
+  <div class="social-wrap">
+    <div class="soc-left">
+      <div class="soc-logo">Concept<span>Cloud</span></div>
+      <div class="soc-nav on"><span>🔥</span>Discover</div>
+      <div class="soc-nav"><span>👥</span>Following</div>
+      <div class="soc-nav"><span>🏆</span>Challenges</div>
+      <div class="soc-nav"><span>🏢</span>Studios</div>
+      <div class="soc-nav"><span>💰</span>Marketplace</div>
+      <div class="soc-nav"><span>💬</span>Messages</div>
+      <div class="soc-nav"><span>☁️</span>My Vault</div>
+      <div class="soc-sp"></div>
+      <div class="soc-profile"><div class="soc-av">G</div><div><div class="soc-pname">Gregory</div><div class="soc-ptier">PRO WRITER</div></div></div>
+    </div>
+    <div class="soc-center">
+      <div class="soc-topbar"><div class="soc-ptitle">Discover</div><div class="soc-sort"><button class="sort-btn on">Trending</button><button class="sort-btn">New</button><button class="sort-btn">Top</button></div></div>
+      <div class="feed">
+        <div class="chal-banner"><div><div class="cb-label">🏆 Studio Challenge · Ends in 6 days</div><div class="cb-title">Paramount: The Wrong Man</div><div class="cb-meta">Wrongful conviction thriller · $2,500 prize · 847 entries</div></div><button class="cb-btn">Enter Now</button></div>
+        <div class="gpills"><div class="gp on">All Genres</div><div class="gp">Thriller</div><div class="gp">Drama</div><div class="gp">Comedy</div><div class="gp">Sci-Fi</div><div class="gp">Horror</div><div class="gp">TV Pilot</div></div>
+        <div class="scc"><div class="scc-hdr"><div class="scc-av" style="background:linear-gradient(135deg,var(--cobalt),var(--cobalt-light));">M</div><div><div class="scc-aname">Maya Chen</div><div class="scc-ameta">Pro Writer · 312 concepts · 8h ago</div></div><span class="tag t-plot" style="margin-left:auto;">Plot</span></div><div class="scc-title">The Memory Broker</div><div class="scc-exc">In a near-future where traumatic memories can be extracted and sold, a black-market therapist realizes her most valuable client's memories may be fabricated — and someone powerful needs them to stay that way.</div><div class="scc-foot"><div class="scc-stats"><div class="scc-stat">❤️ 284</div><div class="scc-stat">💬 41</div><div class="scc-stat">🔗 17 linked</div></div><div class="scc-acts"><button class="scc-act">Save</button><button class="scc-act cw">Co-Write</button></div></div></div>
+        <div class="scc"><div class="scc-hdr"><div class="scc-av" style="background:linear-gradient(135deg,#6b21a8,var(--cobalt));">R</div><div><div class="scc-aname">Rafael Torres</div><div class="scc-ameta">Writer · 89 concepts · 1d ago</div></div><span class="tag t-scene" style="margin-left:auto;">Scene</span></div><div class="scc-title">The last payphone in Los Angeles</div><div class="scc-exc">A detective gets a tip on a murder case from a payphone decommissioned three years ago. The call is still in the phone company's logs.</div><div class="scc-foot"><div class="scc-stats"><div class="scc-stat">❤️ 156</div><div class="scc-stat">💬 23</div><div class="scc-stat">🔗 8 linked</div></div><div class="scc-acts"><button class="scc-act">Save</button><button class="scc-act cw">Co-Write</button></div></div></div>
+      </div>
+    </div>
+    <div class="soc-right">
+      <div class="soc-rh">Trending Concepts</div>
+      <div class="trend-item"><div class="trend-rank">01</div><div><div class="trend-name">The Memory Broker</div><div class="trend-meta">Sci-Fi · 284 saves</div></div></div>
+      <div class="trend-item"><div class="trend-rank">02</div><div><div class="trend-name">Last payphone in LA</div><div class="trend-meta">Thriller · 156 saves</div></div></div>
+      <div class="trend-item"><div class="trend-rank">03</div><div><div class="trend-name">The wrong twin</div><div class="trend-meta">Drama · 134 saves</div></div></div>
+      <div class="trend-item"><div class="trend-rank">04</div><div><div class="trend-name">Retirement home heist</div><div class="trend-meta">Comedy · 98 saves</div></div></div>
+      <div class="soc-rh" style="margin-top:18px;">Active Studio Briefs</div>
+      <div class="sc-r"><div class="sc-name">Paramount <span class="sc-badge">VERIFIED</span></div><div class="sc-brief">Wrongful conviction thrillers, small-town America. Budget $8–15M. Open now.</div><button class="sc-btn">View Brief →</button></div>
+      <div class="sc-r"><div class="sc-name">A24 <span class="sc-badge">VERIFIED</span></div><div class="sc-brief">Character-driven drama. Fresh voices, unconventional structures, any budget range.</div><button class="sc-btn">View Brief →</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO -->
+<section class="ss" id="screen-studio">
+  <div class="eyebrow">🏢 Enterprise Tier</div>
+  <h1 class="stitle">Studio <em>Dashboard</em></h1>
+  <p class="sdesc">Think tanks, secured project rooms, NDA management, and writer analytics — built for production companies.</p>
+  <div class="studio-wrap">
+    <div class="stu-bar">
+      <div class="stu-brand"><div class="stu-icon">🎬</div><div><div class="stu-bname">Paramount Network</div><div class="stu-btier">STUDIO TIER · ENTERPRISE</div></div></div>
+      <div class="stu-nav"><div class="stu-ni on">Overview</div><div class="stu-ni">Briefs</div><div class="stu-ni">Rooms</div><div class="stu-ni">Submissions</div><div class="stu-ni">Challenges</div><div class="stu-ni">Analytics</div></div>
+      <div class="stu-acts"><button class="stu-btn">⚙ Settings</button><button class="stu-btn primary">＋ New Brief</button></div>
+    </div>
+    <div class="stu-body">
+      <div class="stu-sidebar">
+        <div class="stu-ss">Projects</div>
+        <div class="stu-si on">📋 Active Briefs <span class="stu-badge">3</span></div>
+        <div class="stu-si">🔒 Secure Rooms <span class="stu-badge">5</span></div>
+        <div class="stu-si">📥 Submissions <span class="stu-badge">124</span></div>
+        <div class="stu-ss">Talent</div>
+        <div class="stu-si">🏆 Challenges</div>
+        <div class="stu-si">👥 Writers</div>
+        <div class="stu-si">💬 Messages</div>
+        <div class="stu-ss">Legal</div>
+        <div class="stu-si">📄 NDAs</div>
+        <div class="stu-si">⚖️ Rights Mgmt</div>
+        <div class="stu-si">🕓 IP Timeline</div>
+      </div>
+      <div class="stu-main">
+        <div class="stu-stats">
+          <div class="stu-stat"><div class="stu-sv">124</div><div class="stu-sl">Submissions</div><div class="stu-sd">↑ 23 this week</div></div>
+          <div class="stu-stat"><div class="stu-sv">847</div><div class="stu-sl">Challenge Entries</div><div class="stu-sd">↑ 312 since launch</div></div>
+          <div class="stu-stat"><div class="stu-sv">38</div><div class="stu-sl">Shortlisted</div><div class="stu-sd">↑ 8 this month</div></div>
+          <div class="stu-stat"><div class="stu-sv">5</div><div class="stu-sl">Active Rooms</div><div class="stu-sd">2 under NDA</div></div>
+        </div>
+        <div class="stu-sh"><div class="stu-sht">Active Briefs</div><div class="stu-sha">View All →</div></div>
+        <div class="brief-card"><div class="brief-top"><div><div class="brief-title">The Wrong Man — Wrongful Conviction Thriller</div><div class="brief-desc">Seeking original concepts for a limited series or feature. Character-driven, grounded, budget $8–15M.</div></div><span class="bst bs-open">OPEN</span></div><div class="brief-foot"><span class="bfs">📥 847 entries</span><span class="bfs">👁 12,400 views</span><span class="bfs">⭐ 38 shortlisted</span><span class="bfd">⏱ Closes in 6 days</span></div></div>
+        <div class="brief-card"><div class="brief-top"><div><div class="brief-title">Late Night Comedy — Pilot Concepts</div><div class="brief-desc">Fresh voices in comedy. Single-camera, ensemble cast, streaming-first sensibility.</div></div><span class="bst bs-rev">IN REVIEW</span></div><div class="brief-foot"><span class="bfs">📥 213 entries</span><span class="bfs">👁 5,200 views</span><span class="bfs">⭐ 14 shortlisted</span><span class="bfd">⏱ Closed · Reviewing</span></div></div>
+        <div class="stu-sh" style="margin-top:22px;"><div class="stu-sht">Secure Project Rooms</div><div class="stu-sha">＋ New Room</div></div>
+        <div class="room-card"><div class="room-icon" style="background:var(--cobalt-pale);">🔒</div><div class="room-info"><div class="room-name">The Wrong Man — Writers Room</div><div class="room-meta">6 members · Active now · NDA signed by all</div></div><div class="room-sec">🛡 RLA Level 3</div></div>
+        <div class="room-card"><div class="room-icon" style="background:#f0fdf4;">🔐</div><div class="room-info"><div class="room-name">Q4 Development — Internal</div><div class="room-meta">12 members · Studio only · Confidential</div></div><div class="room-sec">🛡 RLA Level 5</div></div>
+        <div class="room-card"><div class="room-icon" style="background:#faf5ff;">📁</div><div class="room-info"><div class="room-name">Comedy Pilot — Open Think Tank</div><div class="room-meta">23 invited writers · Concept phase</div></div><div class="room-sec">🛡 RLA Level 2</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function show(name, btn) {
+  document.querySelectorAll('.ss').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 60, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
