@@ -969,6 +969,156 @@ footer{
   color:white;
 }
 
+/* WAITLIST PAGE */
+
+.waitlist-panel {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 36px;
+  align-items: start;
+  padding: 38px;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at top left, rgba(15,111,255,.18), transparent 30rem),
+    linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 30px 110px rgba(0,0,0,.45);
+  backdrop-filter: blur(18px);
+}
+
+.waitlist-copy h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  margin-bottom: 20px;
+}
+
+.waitlist-copy p {
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 26px;
+}
+
+.waitlist-benefits {
+  display: grid;
+  gap: 14px;
+}
+
+.waitlist-benefits div {
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.waitlist-benefits strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.waitlist-benefits span {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.waitlist-form-wrap {
+  padding: 30px;
+  border-radius: 28px;
+  background: rgba(3, 7, 15, .72);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: inset 0 0 40px rgba(15,111,255,.05);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--text);
+  font-weight: 700;
+  font-size: .95rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px 15px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.055);
+  color: var(--text);
+  font: inherit;
+  outline: none;
+}
+
+select {
+  appearance: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(152,163,184,.72);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(15,111,255,.75);
+  box-shadow: 0 0 0 4px rgba(15,111,255,.18);
+}
+
+select option {
+  background: #081120;
+  color: white;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--blue);
+}
+
+.fineprint {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.fineprint a {
+  color: var(--blue-soft);
+}
+
+@media (max-width: 980px) {
+  .waitlist-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .waitlist-panel {
+    padding: 22px;
+  }
+
+  .waitlist-form-wrap {
+    padding: 22px;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
 /* ==========================
    MOBILE
    ========================== */
