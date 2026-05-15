@@ -159,137 +159,242 @@
 
           <!-- FORM -->
 
-          <div class="waitlist-form-wrap">
+          <form id="waitlistForm">
 
-            <form id="waitlistForm">
+            <!-- NAME / EMAIL -->
 
-              <div class="two-col">
+            <div class="two-col">
 
-                <div>
+              <div>
 
-                  <label for="name">
-                    Name
-                  </label>
+                <label for="name">
+                  Name
+                </label>
 
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Your name"
-                    required
-                  />
-
-                </div>
-
-                <div>
-
-                  <label for="email">
-                    Email
-                  </label>
-
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="you@email.com"
-                    required
-                  />
-
-                </div>
-
-              </div>
-
-              <div class="two-col">
-
-                <div>
-
-                  <label for="writerType">
-                    What do you write?
-                  </label>
-
-                  <select
-                    id="writerType"
-                    name="writerType"
-                    required
-                  >
-
-                    <option value="" disabled selected>
-                      Select one
-                    </option>
-
-                    <option>Screenplays</option>
-                    <option>TV / Episodic</option>
-                    <option>Short Films</option>
-                    <option>Other</option>
-
-                  </select>
-
-                </div>
-
-                <div>
-
-                  <label for="experience">
-                    Experience level
-                  </label>
-
-                  <select
-                    id="experience"
-                    name="experience"
-                    required
-                  >
-
-                    <option value="" disabled selected>
-                      Select one
-                    </option>
-
-                    <option>New</option>
-                    <option>Intermediate</option>
-                    <option>Advanced</option>
-                    <option>Professional</option>
-
-                  </select>
-
-                </div>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  required
+                />
 
               </div>
 
               <div>
 
-                <label for="note">
-                  What would make this a must-have?
+                <label for="email">
+                  Email
                 </label>
 
-                <textarea
-                  id="note"
-                  name="note"
-                  rows="5"
-                  placeholder="Scene linking, outlining systems, export tools, AI-assisted concept mapping..."
-                ></textarea>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="you@email.com"
+                  required
+                />
 
               </div>
 
-              <button
-                class="btn btn-primary"
-                type="submit"
+            </div>
+
+            <!-- WRITER TYPE / STAGE -->
+
+            <div class="two-col">
+
+              <div>
+
+                <label for="writerType">
+                  What kind of stories do you write?
+                </label>
+
+                <select
+                  id="writerType"
+                  name="writerType"
+                  required
+                >
+
+                  <option value="" disabled selected>
+                    Select one
+                  </option>
+
+                  <option>Feature Films</option>
+                  <option>TV / Episodic</option>
+                  <option>Short Films</option>
+                  <option>Novels / Prose</option>
+                  <option>Comics / Graphic Novels</option>
+                  <option>Games / Interactive Stories</option>
+                  <option>Still Figuring It Out</option>
+                  <option>Other</option>
+
+                </select>
+
+              </div>
+
+              <div>
+
+                <label for="stage">
+                  Where are you in your writing process?
+                </label>
+
+                <select
+                  id="stage"
+                  name="stage"
+                  required
+                >
+
+                  <option value="" disabled selected>
+                    Select one
+                  </option>
+
+                  <option>I mostly capture ideas</option>
+                  <option>I’m developing concepts</option>
+                  <option>I’m building outlines</option>
+                  <option>I’m actively writing scripts</option>
+                  <option>I’m revising existing work</option>
+                  <option>I manage multiple projects</option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+            <!-- DEVICE / EXPERIENCE -->
+
+            <div class="two-col">
+
+              <div>
+
+                <label for="device">
+                  Which device would you use most?
+                </label>
+
+                <select
+                  id="device"
+                  name="device"
+                  required
+                >
+
+                  <option value="" disabled selected>
+                    Select one
+                  </option>
+
+                  <option>iPhone</option>
+                  <option>iPad</option>
+                  <option>Mac</option>
+                  <option>All Three</option>
+
+                </select>
+
+              </div>
+
+              <div>
+
+                <label for="experience">
+                  Experience level
+                </label>
+
+                <select
+                  id="experience"
+                  name="experience"
+                  required
+                >
+
+                  <option value="" disabled selected>
+                    Select one
+                  </option>
+
+                  <option>New</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                  <option>Professional</option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+            <!-- FEATURES -->
+
+            <div>
+
+              <label for="features">
+                What features would matter most to you?
+              </label>
+
+              <textarea
+                id="features"
+                name="features"
+                rows="5"
+                placeholder="Quick capture, scene cards, outlining systems, timeline tools, character tracking, AI-assisted concept mapping, export tools..."
+              ></textarea>
+
+            </div>
+
+            <!-- BETA -->
+
+            <div
+              style="
+                display:flex;
+                align-items:flex-start;
+                gap:12px;
+                margin-bottom:28px;
+                margin-top:8px;
+              "
+            >
+
+              <input
+                id="beta"
+                name="beta"
+                type="checkbox"
+                style="
+                  width:18px;
+                  height:18px;
+                  margin-top:4px;
+                "
+              />
+
+              <label
+                for="beta"
+                style="
+                  margin-bottom:0;
+                  line-height:1.6;
+                  font-weight:500;
+                "
               >
-                Join Waitlist
-              </button>
+                I’m interested in beta testing and early platform previews.
+              </label>
 
-              <div class="fineprint">
+            </div>
 
-                By joining, you agree to our
-                <a href="privacy.html">
-                  Privacy Policy
-                </a>.
+            <!-- BUTTON -->
 
-              </div>
+            <button
+              class="btn btn-primary"
+              type="submit"
+            >
+              Join Waitlist
+            </button>
 
-              <div
-                id="formMessage"
-                style="margin-top:18px;font-weight:600;"
-              ></div>
+            <div class="fineprint">
 
-            </form>
+              By joining, you agree to our
+              <a href="privacy.html">
+                Privacy Policy
+              </a>.
+
+            </div>
+
+            <div
+              id="formMessage"
+              style="margin-top:18px;font-weight:600;"
+            ></div>
+
+          </form>
+
 
           </div>
 
