@@ -1,23 +1,22 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# MARK: Dependencies
+node_modules/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# MARK: Build output
+dist/
+*.tsbuildinfo
 
-# testing
-/coverage
+# MARK: Environment
+.env
+.env.*
+!.env.example
 
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+# MARK: Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# MARK: Editor and OS
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/

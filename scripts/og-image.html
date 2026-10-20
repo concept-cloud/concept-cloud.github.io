@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Open Graph image source</title>
+    <style>
+      /* MARK: Canvas */
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #070b14;
+        font-family: 'Inter', -apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .frame {
+        position: relative;
+        box-sizing: border-box;
+        width: 1200px;
+        height: 630px;
+        padding: 84px 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background:
+          radial-gradient(ellipse 60% 70% at 85% 0%, rgba(59, 130, 246, 0.22), transparent 70%),
+          linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px) 0 0 / 60px 60px,
+          linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px) 0 0 / 60px 60px,
+          #070b14;
+      }
+
+      /* MARK: Content */
+      .mark {
+        display: grid;
+        place-items: center;
+        width: 76px;
+        height: 76px;
+        border-radius: 18px;
+        border: 2px solid rgba(91, 156, 245, 0.45);
+        background: linear-gradient(135deg, #1e3a6e, #0b111e);
+        color: #cfe1fd;
+        font: 700 30px ui-monospace, 'SF Mono', Menlo, monospace;
+      }
+      h1 {
+        margin: 0;
+        color: #fff;
+        font-size: 88px;
+        font-weight: 650;
+        letter-spacing: -0.035em;
+        line-height: 1;
+      }
+      .title {
+        margin: 22px 0 0;
+        color: #93c0fb;
+        font-size: 38px;
+        font-weight: 500;
+        letter-spacing: -0.015em;
+      }
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #a3aec2;
+        font: 500 22px ui-monospace, 'SF Mono', Menlo, monospace;
+      }
+      .meta span:first-child {
+        color: #e6ebf3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="mark">GH</div>
+      <div>
+        <h1>Gregory Hudler</h1>
+        <p class="title">Systems Administrator &amp; Software Developer</p>
+      </div>
+      <div class="meta">
+        <span>gregoryhudler.dev</span>
+        <span>Enterprise IT · USMC Veteran · Web &amp; Mobile</span>
+      </div>
+    </div>
+  </body>
+</html>
