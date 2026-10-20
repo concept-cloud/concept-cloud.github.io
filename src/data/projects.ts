@@ -110,7 +110,6 @@ export const projects: Project[] = [
     ],
     screenshots: [],
     icon: '/projects/kin-kitchen/icon.png',
-    githubUrl: 'https://github.com/concept-cloud/KinKitchen',
     blogUrl: 'https://pushtomaindev.github.io/development-blog/products/kin-kitchen/',
     featured: true,
     placeholders: ['Add screenshots to public/projects/kin-kitchen/', 'Add an App Store or TestFlight URL when available'],
